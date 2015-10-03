@@ -50,6 +50,16 @@ usersController.get('/login', function (req, res){
 	res.render('users/login.ejs');
 });
 
-
+usersController.post('/login', function (req, res){
+	User.findOneAsync({
+		email: req.body.email
+	}).then(function(user){
+		user.comparePasswordAsync(req.body.password).then(function (isMatch){
+			console.log("Match: " + isMatch);
+			req.session.email = user.email;
+			res.redirect(303, '/');
+		});
+	});
+});
 
 module.exports = usersController;
