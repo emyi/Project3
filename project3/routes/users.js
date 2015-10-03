@@ -31,4 +31,23 @@ usersController.get('/users/new', function (req, res){
 	res.render('users/new.ejs')
 });
 
+usersController.post('/users/create', function (req, res){
+	var user = new User({
+		email: req.body.email,
+		password: req.body.password
+	});
+	user.saveAsync().then(function(){
+		console.log("returning inside of save");
+		req.session.email = user.email;
+		res.redirect(303, '/');
+	}).catch(function(err){
+		console.log("error : " + err);
+		res.redirect(303, '/users/new')
+	});
+});
+
+usersController.get('/login', function (req, res){
+	
+})
+
 module.exports = usersController;
