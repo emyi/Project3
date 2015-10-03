@@ -19,4 +19,12 @@ usersController.get('/users', function (req, res){
 	}
 });
 
+usersController.get('/users/:id', function (req, res){
+	User.findByIdAsync(req.params.id).then(function(user){
+		res.render('profile.ejs', {
+			user: user
+		});
+	}).catch();
+});
+
 module.exports = usersController;
