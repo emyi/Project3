@@ -47,7 +47,9 @@ usersController.post('/users/create', function (req, res){
 });
 
 usersController.get('/login', function (req, res){
-	
-})
+	res.render('users/login.ejs');
+});
+
+
 
 module.exports = usersController;
