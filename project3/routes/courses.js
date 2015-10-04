@@ -16,7 +16,7 @@ var request_yelp = function(set_paramaters, callback) {
 
 	var default_parameters = {
 		term: 'golf',
-		location: 'Los Angeles'
+		location: 'Los Angeles',
 		sort: '2'
 	};
 
