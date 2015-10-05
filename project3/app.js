@@ -7,8 +7,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var dbConfig = require('./db/config.js');
 // var oauthSignature = require('oauth-Signature');
-
+require('dotenv').load();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -45,6 +46,19 @@ if (app.get('env') === 'development') {
     });
   });
 }
+
+switch(app.get('env')){
+    case 'development':
+        mongoose.connect(dbConfig.mongo.dev.conn, dbConfig.mongo.options);
+        break;
+    case 'production':
+        mongoose.connect(dbConfig.mongo.prod.conn, dbConfig.mongo.options);
+        break;
+    default:
+        throw new Error('Unknown execution environment: ' + app.get('env'));
+}
+
+require('./db/seeds.js').seedUsers();
 
 // production error handler
 // no stacktraces leaked to user
