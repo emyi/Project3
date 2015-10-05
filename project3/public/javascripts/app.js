@@ -34,7 +34,7 @@ var initPage = function() {
 
 		var resultCourses = $.get('http://api.yelp.com/v2/search?term=golf&location' + $('#search-term').val())
 		.done(function(responseJSON) {
-			console.log(responseJSON)
+			console.log(responseJSON);
 		});
 	});
-}
+};

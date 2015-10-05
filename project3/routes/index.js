@@ -3,9 +3,9 @@ var router = express.Router();
 // var User = require('../models/user.js');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+// router.get('/', function(req, res, next) {
+//   res.render('index', { title: 'Express' });
+// });
 
 // exports.index = function (req, res){
 // 	User.find({}).exec(function (err, users) {
@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
 
 router.use('/', require('./users'));
 
-// router.use('/courses', require('./courses'));
+router.use('/', require('./courses'));
 
 
 module.exports = router;

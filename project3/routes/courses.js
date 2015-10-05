@@ -1,8 +1,14 @@
+var express = require('express');
+var coursesController = express.Router();
 var oauthSignature = require('oauth-signature');
 var n = require('nonce')();
 var request = require('request');
 var qs = require('querystring');
 var _ = require('lodash');
+
+coursesController.get('/', function(req, res) {
+	res.render('index');
+});
 
 // function for yelp api call
 
@@ -48,3 +54,6 @@ var request_yelp = function(set_paramaters, callback) {
 		return callback(error, response, body);
 	});
 };
+
+module.exports = request_yelp;
+module.exports = coursesController;
