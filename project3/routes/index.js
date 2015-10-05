@@ -7,14 +7,13 @@ var router = express.Router();
 //   res.render('index', { title: 'Express' });
 // });
 
-// exports.index = function (req, res){
-// 	User.find({}).exec(function (err, users) {
-//         res.render('index.ejs', {
-//             users: users
-//         });
-
-//     });
-// };
+exports.index = function (req, res){
+	User.find({}).exec(function (err, users) {
+        res.render('index.ejs', {
+            users: users
+        });
+    });
+};
 
 router.use('/', require('./users'));
 
