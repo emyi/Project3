@@ -22,10 +22,13 @@ yelp.search({term: "golf", location: "Los Angeles"}, function(error, data) {
 // });
 
 coursesController.get('/', function(req, res) {
-	res.render('index');
+	
 	yelp.search({term: "golf", location: "Los Angeles"}, function(error, data) {
 		console.log(error);
 		console.log(data);
+    res.render('index', {
+      courses: data.businesses
+    });
 	});
 });
 
