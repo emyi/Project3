@@ -34,7 +34,10 @@ usersController.get('/new', function (req, res){
 usersController.post('/users/create', function (req, res){
 	var user = new User({
 		email: req.body.email,
-		password: req.body.password
+		password: req.body.password,
+		name: req.body.name,
+		location: req.body.location,
+		handicap: req.body.handicap
 	});
 	user.saveAsync().then(function(){
 		console.log("returning inside of save");
