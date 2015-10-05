@@ -6,13 +6,13 @@ usersController.get('/users', function (req, res){
 	if(req.session && req.session.email){
 		User.findOne({ email: req.session.email}).then(function(user, err){
 			console.log(users.length);
-			res.render('/users/index.ejs', {
+			res.render('users/index.ejs', {
 				users: users,
 				curr_user: user.email
 			});
 		});
 	}else{
-		res.render('/users/index.ejs', {
+		res.render('users/index.ejs', {
 			curr_user: null,
 			users: users
 		});
@@ -21,7 +21,7 @@ usersController.get('/users', function (req, res){
 
 usersController.get('/users/:id', function (req, res){
 	User.findByIdAsync(req.params.id).then(function(user){
-		res.render('profile.ejs', {
+		res.render('users/profile.ejs', {
 			user: user
 		});
 	}).catch();
@@ -45,7 +45,7 @@ usersController.post('/users/create', function (req, res){
 		res.redirect(303, '/');
 	}).catch(function(err){
 		console.log("error : " + err);
-		res.redirect(303, '/users/new');
+		res.redirect(303, 'users/new');
 	});
 });
 
