@@ -23,12 +23,12 @@
     </div>
 
     <div id="results-container">
-	    <ul id="courses-container">
+	    <ol id="courses-container">
 	    	<% for (i = 0; i < courses.length; i ++) { %>
-	    	<li> <%= courses[i].name %></li>
+	    	<li> <%= courses[i].name %> <img src="<%= courses[i].rating_img_url %>"></li>
 
 	    	<% } %>
-    	</ul>
+    	</ol>
     </div>
 
     <% include partials/map %>
