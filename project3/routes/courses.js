@@ -1,10 +1,10 @@
 var express = require('express');
 var coursesController = express.Router();
-var oauthSignature = require('oauth-signature');
-var n = require('nonce')();
-var request = require('request');
-var qs = require('querystring');
-var _ = require('lodash');
+// var oauthSignature = require('oauth-signature');
+// var n = require('nonce')();
+// var request = require('request');
+// var qs = require('querystring');
+// var _ = require('lodash');
 
 
 
