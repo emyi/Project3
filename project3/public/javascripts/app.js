@@ -8,6 +8,7 @@
 // 	});
 // });
 
+
 var COURSES = [];
 
 $(document).ready(function() {
