@@ -5,7 +5,7 @@ var User = require('../models/user.js');
 usersController.get('/users', function (req, res){
 	if(req.session && req.session.email){
 		User.findOne({ email: req.session.email}).then(function(user, err){
-			console.log(users.length)
+			console.log(users.length);
 			res.render('users/index.ejs', {
 				users: users,
 				curr_user: user.email
@@ -27,8 +27,8 @@ usersController.get('/users/:id', function (req, res){
 	}).catch();
 });
 
-usersController.get('/users/new', function (req, res){
-	res.render('users/new.ejs')
+usersController.get('/new', function (req, res){
+	res.render('users/new.ejs');
 });
 
 usersController.post('/users/create', function (req, res){
@@ -42,7 +42,7 @@ usersController.post('/users/create', function (req, res){
 		res.redirect(303, '/');
 	}).catch(function(err){
 		console.log("error : " + err);
-		res.redirect(303, '/users/new')
+		res.redirect(303, '/users/new');
 	});
 });
 
