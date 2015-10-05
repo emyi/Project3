@@ -9,6 +9,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var dbConfig = require('./db/config.js');
+var credentials = require('./config/credentials.js');
 // var oauthSignature = require('oauth-Signature');
 
 // view engine setup
