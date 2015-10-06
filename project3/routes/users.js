@@ -61,25 +61,7 @@ usersController.get('/new', function (req, res){
 	res.render('users/new.ejs');
 });
 
-// usersController.patch('/users/:id', function (req, res) {
-	// User.findByIdAsync(req.params.id).then(function(user){
-	// 	res.render('users/profile.ejs', {
-	// 		curr_user: user
-	// 		if(req.body.location){ 
-	// 			user.location = req.body.location;
-	// 		}
- //    		if(req.body.handicap){
- //    			user.handicap = req.body.handicap;
- //    		}
-	// 		user.save(function(error) {
-	//       		if(error) res.json({messsage: 'Could not update user b/c:' + error});
-
-	//       		res.json({message: 'User successfully updated'});
- //    		});
-	// 	});
-	// }).catch();
-// });
-
+//update user info here
 usersController.post('/users/:id/update', function (request, response) {
 	console.log('here');
   	var id = request.params.id;
@@ -89,23 +71,14 @@ usersController.post('/users/:id/update', function (request, response) {
 	    if(request.body.handicap) user.handicap = request.body.handicap;
 
 	    user.save(function(error) {
-	    	response.render('users/profile.ejs');
-	      if(error) response.json({messsage: 'Could not update user b/c:' + error});
+	    	// response.render('users/profile.ejs');
+	      	if(error) response.json({messsage: 'Could not update user b/c:' + error});
 
-	      response.json({message: 'User successfully updated'});
-	    });  
-	  });
+	      		// response.json({message: 'User successfully updated'});
+	    		response.redirect(303, '/users/' + user.id);  
+	    	});
+	  	});
 });
-
-// usersController.put('/users/:id', function (req, res){
-// 	Users.update({
-// 		location: req.user.location,
-// 		handicap: req.user.handicap
-// 	},
-// 	function(err) {
-//             res.redirect('/users/'+ user.id);
-//         });
-// });
 
 usersController.post('/users/create', function (req, res){
 	var user = new User({
