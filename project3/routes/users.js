@@ -2,6 +2,26 @@ var express = require('express');
 var usersController = express.Router();
 var User = require('../models/user.js');
 
+usersController.get('/', function ( req, res ) {
+    User.findAsync({}).then(function (users, err){
+        if(req.session && req.session.email){
+            User.findOne({ email: req.session.email}).then(function(user, err){
+                console.log(users.length)
+                res.render('index.ejs',{
+                    user: user,
+                    curr_user: user.email
+                });
+            })
+        }
+        else{
+            res.render('index.ejs',{
+                curr_user: null,
+                user: user
+            });
+        }
+    });
+});
+
 usersController.get('/users', function (req, res){
 	User.findAsync({}).then(function (users, err){
 		if(req.session && req.session.email){
@@ -24,7 +44,7 @@ usersController.get('/users', function (req, res){
 usersController.get('/users/:id', function (req, res){
 	User.findByIdAsync(req.params.id).then(function(user){
 		res.render('users/profile.ejs', {
-			user: user
+			curr_user: user
 		});
 	}).catch();
 });
@@ -44,10 +64,10 @@ usersController.post('/users/create', function (req, res){
 	user.saveAsync().then(function(){
 		console.log("returning inside of save");
 		req.session.email = user.email;
-		res.redirect(303, '/');
+		res.redirect(303, '/users/' + user.id);
 	}).catch(function(err){
 		console.log("error : " + err);
-		res.redirect(303, 'users/new');
+		res.redirect(303, '/users/new');
 	});
 });
 
@@ -62,7 +82,7 @@ usersController.post('/login', function (req, res){
 		user.comparePasswordAsync(req.body.password).then(function (isMatch){
 			console.log("Match: " + isMatch);
 			req.session.email = user.email;
-			res.redirect(303, 'users/profile.ejs');
+			res.redirect(303, 'users/' + user.body.id);
 		});
 	});
 });
