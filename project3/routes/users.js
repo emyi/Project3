@@ -49,6 +49,14 @@ usersController.get('/users/:id', function (req, res){
 	}).catch();
 });
 
+usersController.get('/users/:id/edit', function (req, res){
+	User.findByIdAsync(req.params.id).then(function(user){
+		res.render('users/edit.ejs', {
+			curr_user: user
+		});
+	}).catch();
+});
+
 usersController.get('/new', function (req, res){
 	res.render('users/new.ejs');
 });
