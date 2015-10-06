@@ -26,7 +26,7 @@ coursesController.get('/', function(req, res){
 
   });
 });
-coursesController.get('/location', function(req, res){
+coursesController.get('/courses', function(req, res){
   console.log('go')
   var location = req.query.searchTerm;
   // res.redirect('/term');
@@ -34,10 +34,13 @@ coursesController.get('/location', function(req, res){
   yelp.search({term: "golf", location: location}, function(error, data) {
     console.log(error);
     console.log(data);
-    res.json(data.businesses);
+    // res.json(data.businesses);
+    res.render('courses/index.ejs', {courses: data.businesses})
   });
-
 });
+
+
+
 
 
 
