@@ -2,26 +2,6 @@ var express = require('express');
 var usersController = express.Router();
 var User = require('../models/user.js');
 
-usersController.get('/', function ( req, res ) {
-    User.findAsync({}).then(function (users, err){
-        if(req.session && req.session.email){
-            User.findOne({ email: req.session.email}).then(function(user, err){
-                console.log(users.length)
-                res.render('index.ejs',{
-                    user: user,
-                    curr_user: user.email
-                });
-            })
-        }
-        else{
-            res.render('index.ejs',{
-                curr_user: null,
-                user: user
-            });
-        }
-    });
-});
-
 usersController.get('/users', function (req, res){
 	User.findAsync({}).then(function (users, err){
 		if(req.session && req.session.email){
@@ -82,7 +62,7 @@ usersController.post('/login', function (req, res){
 		user.comparePasswordAsync(req.body.password).then(function (isMatch){
 			console.log("Match: " + isMatch);
 			req.session.email = user.email;
-			res.redirect(303, 'users/' + user.body.id);
+			res.redirect(303, 'users/' + user.id);
 		});
 	});
 });
