@@ -12,7 +12,6 @@ var router = express.Router();
 //         res.render('index.ejs', {
 //             users: users
 //         });
-
 //     });
 // };
 

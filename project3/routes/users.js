@@ -3,25 +3,27 @@ var usersController = express.Router();
 var User = require('../models/user.js');
 
 usersController.get('/users', function (req, res){
-	if(req.session && req.session.email){
-		User.findOne({ email: req.session.email}).then(function(user, err){
-			console.log(users.length);
-			res.render('users/index.ejs', {
-				users: users,
-				curr_user: user.email
+	User.findAsync({}).then(function (users, err){
+		if(req.session && req.session.email){
+			User.findOne({ email: req.session.email}).then(function(user, err){
+				console.log(users.length);
+				res.render('users/index.ejs', {
+					users: users,
+					curr_user: user.email
+				});
 			});
-		});
-	}else{
-		res.render('users/index.ejs', {
-			curr_user: null,
-			users: users
-		});
-	}
+		}else{
+			res.render('users/index.ejs', {
+				curr_user: null,
+				users: users
+			});
+		}
+	});
 });
 
 usersController.get('/users/:id', function (req, res){
 	User.findByIdAsync(req.params.id).then(function(user){
-		res.render('profile.ejs', {
+		res.render('users/profile.ejs', {
 			user: user
 		});
 	}).catch();
@@ -45,7 +47,7 @@ usersController.post('/users/create', function (req, res){
 		res.redirect(303, '/');
 	}).catch(function(err){
 		console.log("error : " + err);
-		res.redirect(303, '/users/new');
+		res.redirect(303, 'users/new');
 	});
 });
 
@@ -60,7 +62,7 @@ usersController.post('/login', function (req, res){
 		user.comparePasswordAsync(req.body.password).then(function (isMatch){
 			console.log("Match: " + isMatch);
 			req.session.email = user.email;
-			res.redirect(303, '/');
+			res.redirect(303, 'users/profile.ejs');
 		});
 	});
 });
