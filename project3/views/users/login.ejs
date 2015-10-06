@@ -2,31 +2,38 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/modal.css">
 </head>
 <body>
-	<div class="panel panel-default">
-	  <div class="panel-body">
+<!-- 	<div class="panel panel-default">
+	  <div class="panel-body"> -->
 
-	<h1>Log In</h1>
+	<a href="#openModal">Log In</a>
 
-	<form action="/login" method="post">
-		<div class="form-group">
-		    <label name="title">Email</label>
-		    <input type="email" class="form-control" name="email" value="" placeholder="Email">
-		</div>
+	<div id="openModal" class="modalDialog">
+		<div>
+			<a href="#close" title="Close" class="close">X</a>
+			<h1>Log In</h1>
 
-		<div class="form-group">
-		    <label name="title">Password</label>
-		    <input type="text" class="form-control" name="password" value="" placeholder="Password">
-		</div>
+			<form action="/login" method="post">
+				<div class="form-group">
+				    <label name="title">Email</label>
+				    <input type="email" class="form-control" name="email" value="" placeholder="Email">
+				</div>
 
-	    <button type="submit" class="btn btn-default">Log In</button>
+				<div class="form-group">
+				    <label name="title">Password</label>
+				    <input type="text" class="form-control" name="password" value="" placeholder="Password">
+				</div>
+
+			    <button type="submit" class="btn btn-default">Log In</button>
+			</form>
 
 	 	</div>
-	</form>
-
-	  </div>
 	</div>
+
+<!-- 	  </div>
+	</div> -->
 
 </body>
 </html>
