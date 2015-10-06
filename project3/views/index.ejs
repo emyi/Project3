@@ -10,8 +10,18 @@
 </head>
 <body>
 
-	<a href="/new">Register</a> <a href="/login">Login</a>
-	
+	<% if( curr_user ){ %>
+
+	<h1>logged in user: <%= curr_user %></h1>
+	<a href="/logout">Log Out</a>
+
+
+	<% } else { %>
+
+		<a href="/new">Register</a> <a href="/login">Login</a>
+
+	<% } %>
+
 	<h1> Golf Courses </h1>
 
 	<div id="search-container">
