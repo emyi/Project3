@@ -2,7 +2,7 @@ var express = require('express');
 var usersController = express.Router();
 var User = require('../models/user.js');
 
-usersController.get('/', function ( req, res ) {
+usersController.get('/user', function ( req, res ) {
     User.findAsync({}).then(function (users, err){
         if(req.session && req.session.email){
             User.findOne({ email: req.session.email}).then(function(user, err){
