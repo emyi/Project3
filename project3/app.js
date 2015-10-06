@@ -1,4 +1,6 @@
 require('dotenv').load();
+
+module.exports = require('./node_modules/express/lib/express');
 var Promise = require('bluebird');
 var mongoose = Promise.promisifyAll(require('mongoose'));
 var express = require('express');
@@ -20,8 +22,8 @@ app.set('view engine', 'ejs');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use( require('./node_modules/body-parser').urlencoded({ extended: true }));
+app.use( require('cookie-parser')(credentials.cookieSecret));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use( require('express-session')({ resave: false, saveUninitialized: false, secret: credentials.cookieSecret}));
 
@@ -39,15 +41,15 @@ app.use(require('./routes'));
 
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
-}
+// if (app.get('env') === 'development') {
+//   app.use(function(err, req, res, next) {
+//     res.status(err.status || 500);
+//     res.render('error', {
+//       message: err.message,
+//       error: err
+//     });
+//   });
+// }
 
 switch(app.get('env')){
     case 'development':
