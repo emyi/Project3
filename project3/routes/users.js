@@ -62,7 +62,7 @@ usersController.post('/login', function (req, res){
 		user.comparePasswordAsync(req.body.password).then(function (isMatch){
 			console.log("Match: " + isMatch);
 			req.session.email = user.email;
-			res.redirect(303, '/');
+			res.redirect(303, 'users/profile.ejs');
 		});
 	});
 });
