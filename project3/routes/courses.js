@@ -15,21 +15,22 @@ yelp.search({term: "golf", location: "Los Angeles"}, function(error, data) {
   console.log(data);
 });
 
-// See http://www.yelp.com/developers/documentation/v2/business
-// yelp.business("yelp-san-francisco", function(error, data) {
-//   console.log(error);
-//   console.log(data);
-// });
 
 coursesController.get('/', function(req, res) {
 	
 	yelp.search({term: "golf", location: "Los Angeles"}, function(error, data) {
-		console.log(error);
-		console.log(data);
+		// console.log(error);
+		// console.log(data);
     res.render('index', {
       courses: data.businesses
     });
 	});
+});
+
+coursesController.get('/courses', function(req, res) {
+  // var id = req.params.id;
+  // console.log(req.params.name);
+  res.render('courses/show.ejs');
 });
 
 
