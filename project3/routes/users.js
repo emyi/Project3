@@ -64,7 +64,7 @@ usersController.post('/users/create', function (req, res){
 	user.saveAsync().then(function(){
 		console.log("returning inside of save");
 		req.session.email = user.email;
-		res.redirect(303, '/');
+		res.redirect(303, '/users/' + user.id);
 	}).catch(function(err){
 		console.log("error : " + err);
 		res.redirect(303, '/users/new');
