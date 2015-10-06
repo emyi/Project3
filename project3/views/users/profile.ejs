@@ -1,14 +1,64 @@
-<% if( curr_user ){ %>
+<html>
+<head>
+	<title></title>
 
-<h1>logged in user: <%= curr_user.name %></h1>
-<a href="/logout">Log Out</a>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+</head>
+<body>
+	<div class="page-header">
+
+			<h1>LOGO <small>Courses</small></h1>
+
+			<% if( curr_user ){ %>
+
+			<p>logged in user: <%= curr_user.name %></p>
+			<a href="/logout">Log Out</a>
+
+			<% } else { %>
+
+				<a href="/new">Register</a> <a href="/login">Login</a>
+
+			<% } %>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-6 col-md-3">
+	    <a href="#" class="thumbnail">
+	      <img src="http://images.askmen.com/galleries/men/tiger-woods/pictures/tiger-woods-picture-1.jpg">
+	    </a>
+	  </div>
+
+		<h1> <%= curr_user.email %> </h1>
+		<h1> <%= curr_user.name %> </h1>
+		<h1> <%= curr_user.location %> </h1>
+		<h1> Handicap: <%= curr_user.handicap %> </h1>
+
+	</div>
+
+	<div class="thumbnails">
+		<div class="row">
+			<div class="col-xs-6 col-md-3">
+		    <a href="#" class="thumbnail">
+		      <img src="https://avatars3.githubusercontent.com/u/13632316?v=3&s=400">
+		    </a>
+	  		</div>
+			<div class="col-xs-6 col-md-3">
+		    <a href="#" class="thumbnail">
+		      <img src="https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/3978/thumb_bHZp1AU_DOcrHlCrjrJvlcdnPOaTZWocjfSdkCVxWuE.jpeg">
+		    </a>
+	  		</div>
+			<div class="col-xs-6 col-md-3">
+		    <a href="#" class="thumbnail">
+		      <img src="https://avatars3.githubusercontent.com/u/13632316?v=3&s=400">
+		    </a>
+	  		</div>
+
+		</div>
+	</div>
 
 
-<% } else { %>
 
-	<a href="/new">Register</a> <a href="/login">Login</a>
 
-<% } %>
-<h1> <%= curr_user.email %> </h1>
-<h1> <%= curr_user.name %> </h1>
-<h1> <%= curr_user.location %> </h1>
+</body>
+</html>
