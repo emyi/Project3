@@ -9,6 +9,7 @@ var yelp = require("yelp").createClient({
   token_secret: "JPKdScBmCDet96mFqsxMkAzis6Q"
 });
 
+
 // See http://www.yelp.com/developers/documentation/v2/search_api
 yelp.search({term: "golf", location: "Los Angeles"}, function(error, data) {
   console.log(error);
@@ -17,9 +18,9 @@ yelp.search({term: "golf", location: "Los Angeles"}, function(error, data) {
 
 
 coursesController.get('/', function(req, res) {
-	
+  var location = req.query.searchTerm;
 	yelp.search({term: "golf", location: "Los Angeles"}, function(error, data) {
-		// console.log(error);
+		console.log('go');
 		// console.log(data);
     res.render('index', {
       courses: data.businesses
