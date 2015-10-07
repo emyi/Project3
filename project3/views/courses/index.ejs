@@ -64,13 +64,28 @@
 
         <form action="/user/create" method="post">
           <div class="form-group">
+                <label name="title">Name</label>
+                <input type="text" name="name" value=""/>
+          </div>
+
+          <div class="form-group">
             <label name="title">Email</label>
-            <input type="email" class="form-control" name="email" value="" placeholder="Email">
+            <input type="text" name="email" value=""/>
           </div>
 
           <div class="form-group">
             <label name="title">Password</label>
-            <input type="text" class="form-control" name="password" value="" placeholder="Password">
+            <input type="text" name="password" value=""/>
+          </div>
+
+          <div class="form-group">
+            <label name="title">Location</label>
+            <input type="text" name="location" value=""/>
+          </div>
+
+          <div class="form-group">
+            <label name="title">Handicap</label>
+            <input type="text" name="handicap" value=""/>
           </div>
 
           <button type="submit" class="btn btn-default">Log In</button>
