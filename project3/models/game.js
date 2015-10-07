@@ -3,7 +3,8 @@ var Schema = mongoose.Schema;
 
 var gameSchema = mongoose.Schema({
 	course_id: {type: mongoose.Schema.Types.ObjectId, ref: 'Course'},
-	user_ids: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
+	user_ids: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+	teetime: Date
 });
 
 var Game = mongoose.model('Game', gameSchema);
