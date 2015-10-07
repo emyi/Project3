@@ -1,7 +1,9 @@
 <h1>Edit User</h1>
 
+<%= curr_user %>
+
 <!-- form to edit user user -->
-<form action="/users/update" method="patch">
+<form action="/users/<%= curr_user._id%>/update" method="POST">
 
     <!-- location field -->
     <label name="title">Location</label>
@@ -11,5 +13,5 @@
     <label name="title">Handicap</label>
     <input type="text" name="handicap" value=""/>
     <br/>
-    <input type="submit" value="Register">
+    <input type="submit" value="Edit">
 </form>

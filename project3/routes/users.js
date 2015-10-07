@@ -61,6 +61,25 @@ usersController.get('/new', function (req, res){
 	res.render('users/new.ejs');
 });
 
+//update user info here
+usersController.post('/users/:id/update', function (request, response) {
+	console.log('here');
+  	var id = request.params.id;
+
+	  User.findById(id, function(error, user) {
+	    if(request.body.location) user.location = request.body.location;
+	    if(request.body.handicap) user.handicap = request.body.handicap;
+
+	    user.save(function(error) {
+	    	// response.render('users/profile.ejs');
+	      	if(error) response.json({messsage: 'Could not update user b/c:' + error});
+
+	      		// response.json({message: 'User successfully updated'});
+	    		response.redirect(303, '/users/' + user.id);  
+	    	});
+	  	});
+});
+
 usersController.post('/users/create', function (req, res){
 	var user = new User({
 		email: req.body.email,
