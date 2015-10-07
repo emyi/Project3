@@ -108,15 +108,15 @@ usersController.post('/login', function (req, res){
 	User.findOneAsync({
 		email: req.body.email
 	}).then(function(user){
-		user.comparePasswordAsync(req.body.password).then(function (err, isMatch){
-			if(user.password == req.body.password){
-				console.log("Match: " + isMatch);
+		user.comparePasswordAsync(req.body.password).then(function (isMatch){
+			console.log("Match: " + isMatch);
+			if(isMatch === true){
 				req.session.email = user.email;
 				res.redirect(303, 'users/' + user.id);
 			}else{
-				console.log(err)
 				res.redirect(401, '/');
 			}
+
 		});
 	});
 });
