@@ -9,7 +9,7 @@ gamesController.get('/confirm', function(req, res) {
 });
 
 gamesController.get('/group', function(req, res) {
-	res.send('hello');
+	res.render('games/create');
 });
 
 module.exports = gamesController;
