@@ -1,4 +1,10 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/modal.css">
 
+</head>
+<body>
 
 <h1> Golf Courses </h1>
 
@@ -8,19 +14,23 @@
 <label for="search_term">Enter location: </label>
 <input type="text" name="searchTerm" id="search_term" value="" placeholder="Search for Golf Course" />
 </p> -->
-<a id="search-button" class="btn paper-raise">Search</a>
-   </form>
-    </div>
 
-    <div id="results-container">
-   <ol id="courses-container">
-   	<% for (i = 0; i < courses.length; i ++) { %>
-   	<li> <a href="/courses"><%= courses[i].name %></a> <img src="<%= courses[i].rating_img_url %>"></li>
-
-   	<% } %>
-    </ol>
-    </div>
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <% for (i = 0; i < courses.length; i ++) { %>
+      <div class="thumbnail">
+        <img src="<%= courses[i].rating_img_url %>" alt="...">
+        <div class="caption">
+          <h3><%= courses[i].name %></h3>
+          <p><%= courses[i].snippet_text %></p>
+          <p><a href="#" class="btn btn-primary" role="button">More Info!</a></p>
+        </div>
+      </div>
+    <% } %>  
+  </div>
+</div>
 
 </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+
 </html>
