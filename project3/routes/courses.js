@@ -39,6 +39,15 @@ coursesController.get('/courses', function(req, res){
   });
 });
 
+coursesController.get('/courses/:id', function(req, res){
+  yelp.business(req.params.id, function(error, data){
+    console.log(data);
+    res.render('courses/show.ejs', {course: data}); 
+  });
+
+
+});
+
 
 
 
