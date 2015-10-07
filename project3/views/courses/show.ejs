@@ -4,7 +4,16 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
-  <!-- <p><a href="#myModal">Not Logged in? Click Here to Start!</a></p> -->
+<% if( curr_user ){ %>
+
+<h1>logged in user: <%= curr_user %></h1>
+<a href="/logout">Log Out</a>
+
+
+<% } else { %>
+
+
+
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Not Logged in? Click Here to Start</button>
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
@@ -76,6 +85,7 @@
               </div>
             </div>
           </div>
+<% } %>
 
 
 
