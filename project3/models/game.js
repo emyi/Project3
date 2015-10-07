@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var gameSchema = mongoose.Schema({
-	course_id: {type: mongoose.Schema.Types.ObjectId, ref: 'Course'},
-	user_ids: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+	course_id: String, //make this a string
+	user_ids: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
 	teetime: Date
 });
 
