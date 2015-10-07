@@ -1,5 +1,6 @@
 var express = require('express');
 var coursesController = express.Router();
+var Game = require('../models/game.js');
 
 
 var yelp = require("yelp").createClient({
@@ -41,11 +42,28 @@ coursesController.get('/courses', function(req, res){
 
 coursesController.get('/courses/:id', function(req, res){
   yelp.business(req.params.id, function(error, data){
-    console.log(data);
-    res.render('courses/show.ejs', {course: data}); 
+      if(req.session && req.session.email){
+        User.findOne({ email: req.session.email}).then(function(user, err){
+          Game.findAsync({course_id: req.params.id}).then(function(games, err){
+            console.log(games);
+            res.render('courses/show.ejs', {
+              course: data,
+              games: games,
+              curr_user: user.email
+            });
+          });
+        });
+      }else{
+        Game.findAsync({course_id: req.params.id}).then(function(games, err){
+            console.log(games);
+            res.render('courses/show.ejs', {
+              course: data,
+              games: games,
+              curr_user: null
+            });
+          });
+      }
   });
-
-
 });
 
 
