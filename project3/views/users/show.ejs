@@ -1,0 +1,66 @@
+<html>
+<head>
+	<title></title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+</head>
+<body>
+	<div class="page-header">
+
+			<h1>LOGO <small>Courses</small></h1>
+
+			<% if( curr_user ){ %>
+
+			<p>logged in user: <%= curr_user.name %></p>
+			<a href="/logout">Log Out</a>
+
+			<% } else { %>
+
+				<a href="/new">Register</a> <a href="/login">Login</a>
+
+			<% } %>
+	</div>
+
+	<div class="row col-md-9">
+	  <div class="col-xs-6 col-md-3">
+	    <a href="#" class="thumbnail">
+	      <img src="http://images.askmen.com/galleries/men/tiger-woods/pictures/tiger-woods-picture-1.jpg">
+	    </a>
+	  </div>
+
+		<h1> <%= user.email %> </h1>
+		<h1> <%= user.name %> </h1>
+		<h1> <%= user.location %> </h1>
+		<h1> Handicap: <%= user.handicap %> </h1>
+
+	</div>
+
+	<div class="thumbnails col-md-9">
+		<div class="row">
+			<div class="col-xs-6 col-md-3">
+		    <a href="#" class="thumbnail">
+		      <img src="https://avatars3.githubusercontent.com/u/13632316?v=3&s=400">
+		    </a>
+	  		</div>
+			<div class="col-xs-6 col-md-3">
+		    <a href="#" class="thumbnail">
+		      <img src="https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/3978/thumb_bHZp1AU_DOcrHlCrjrJvlcdnPOaTZWocjfSdkCVxWuE.jpeg">
+		    </a>
+	  		</div>
+			<div class="col-xs-6 col-md-3">
+		    <a href="#" class="thumbnail">
+		      <img src="https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/5932/thumb_parrot.jpg">
+		    </a>
+	  		</div>
+	  		<div class="col-xs-6 col-md-3">
+		    <a href="#" class="thumbnail">
+		      <img src="http://keyanbagheri.com/images/headshot.jpg">
+		    </a>
+	  		</div>
+
+		</div>
+	</div>
+
+</body>
+</html>
