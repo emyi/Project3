@@ -9,8 +9,8 @@ gamesController.get('/confirm', function(req, res) {
 	res.render('layout');
 });
 
-gamesController.get('/group', function(req, res) {
-	res.render('games/create');
+gamesController.get('/group/new', function(req, res) {
+	res.render('games/new');
 });
 
 module.exports = gamesController;
