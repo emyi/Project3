@@ -19,7 +19,7 @@ yelp.business("yelp-san-francisco", function(error, data) {
   //console.log(data);
 });
 coursesController.get('/', function(req, res){
-  yelp.search({term: "bars", location: "Los Angeles"}, function(error, data) {
+  yelp.search({term: "golf", location: "Los Angeles"}, function(error, data) {
       //console.log(error);
       //console.log(data);
       res.render('homepage');
