@@ -19,7 +19,7 @@ yelp.business("yelp-san-francisco", function(error, data) {
   //console.log(data);
 });
 coursesController.get('/', function(req, res){
-  yelp.search({term: "bars", location: "Los Angeles"}, function(error, data) {
+  yelp.search({term: "golf", location: "Los Angeles"}, function(error, data) {
       //console.log(error);
       //console.log(data);
       res.render('homepage');
@@ -37,6 +37,15 @@ coursesController.get('/courses', function(req, res){
     // res.json(data.businesses);
     res.render('courses/index.ejs', {courses: data.businesses})
   });
+});
+
+coursesController.get('/courses/:id', function(req, res){
+  yelp.business(req.params.id, function(error, data){
+    console.log(data);
+    res.render('courses/show.ejs', {course: data}); 
+  });
+
+
 });
 
 
