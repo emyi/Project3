@@ -19,5 +19,7 @@ router.use('/', require('./users'));
 
 router.use('/', require('./courses'));
 
+router.use('/', require('./games'));
+
 
 module.exports = router;
