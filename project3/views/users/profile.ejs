@@ -8,18 +8,19 @@
 <body>
 	<div class="page-header">
 
-			<h1>LOGO <small>Courses</small></h1>
+		<h1>LOGO <small>Courses</small></h1>
 
-			<% if( curr_user ){ %>
+		<% if( curr_user ){ %>
 
-			<p>logged in user: <%= curr_user.name %></p>
-			<a href="/logout">Log Out</a>
+		<p>logged in user: <%= curr_user.name %></p>
+		<a href="/logout">Log Out</a>
 
-			<% } else { %>
+		<% } else { %>
 
-				<a href="/new">Register</a> <a href="/login">Login</a>
+			<a href="/new">Register</a> <a href="/login">Login</a>
 
-			<% } %>
+		<% } %>
+
 	</div>
 
 	<div class="row col-md-9">
@@ -35,6 +36,7 @@
 		<h1> Handicap: <%= curr_user.handicap %> </h1>
 
 	</div>
+
 
 	<div class="thumbnails col-md-9">
 		<div class="row">

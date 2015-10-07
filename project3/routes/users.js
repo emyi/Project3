@@ -121,6 +121,15 @@ usersController.post('/login', function (req, res){
 	});
 });
 
+//method to view other player pages
+usersController.get('/player/:id', function (req, res) {
+	User.findByIdAsync(req.params.id).then(function (user) {
+		res.render('users/show', {
+			user: user
+		});
+	}).catch();
+});
+
 //destroys a login session here
 usersController.get('/logout', function (req, res){
 	req.session.email = null;
