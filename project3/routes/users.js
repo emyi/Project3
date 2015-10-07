@@ -114,7 +114,7 @@ usersController.post('/login', function (req, res){
 				req.session.email = user.email;
 				res.redirect(303, 'users/' + user.id);
 			}else{
-				res.redirect(401, '/');
+				res.redirect(401, '/login');
 			}
 
 		});
