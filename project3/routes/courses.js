@@ -42,7 +42,6 @@ coursesController.get('/courses', function(req, res){
 
 coursesController.get('/courses/:id', function(req, res){
   yelp.business(req.params.id, function(error, data){
-    // User.findAsync({}).then(function (users, err){
       if(req.session && req.session.email){
         User.findOne({ email: req.session.email}).then(function(user, err){
           Game.findAsync({course_id: req.params.id}).then(function(games, err){
@@ -64,7 +63,6 @@ coursesController.get('/courses/:id', function(req, res){
             });
           });
       }
-    // });
   });
 });
 
