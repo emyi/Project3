@@ -1,13 +1,18 @@
 <html>
 <head>
 	<title></title>
+
+
 </head>
 <body>
 
-<% if (curr_user) { %>
+	<% if (curr_user) { %>
 
 	<h1>logged in user: <%= curr_user.name %></h1>
 	<a href="/logout">Log Out</a>
+
+	<a href="join/<%= curr_user.id %>"> Join</a><!-- <button type="submit" id="join">Join</button> -->
+
 	<% } else { %>
 
 	Login
@@ -16,7 +21,7 @@
 
 <h1>create group</h1>
 
-<button type="submit">Join</button>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </body>
 </html>

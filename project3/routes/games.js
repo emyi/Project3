@@ -4,7 +4,6 @@ var User = require('../models/user.js');
 var Course = require('../models/course.js');
 var Game = require('../models/game.js');
 
-var game = [];
 
 gamesController.get('/confirm', function(req, res) {
 	res.render('layout');
@@ -25,5 +24,14 @@ gamesController.get('/group/new', function(req, res) {
 		}
 	}).catch();
 });
+
+
+gamesController.get('/group/join/:id', function(req, res) {
+	//grabs user id from 'join' A tag on
+	console.log("user_id: " + req.params.id);
+	User.findByIdAsync(req.params.id).then(function(user) {
+	});
+});
+
 
 module.exports = gamesController;
