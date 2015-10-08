@@ -94,11 +94,12 @@
 
 
 <h1><%= course.name %></h1>
+<img src="<%= course.rating_img_url_large %>" alt="...">
 <p>Address:<%= course.location.display_address %></p>
 
 <p>Phone Number:<%= course.display_phone %></p>
 <p>URL:<%= course.url %></p>
-<img src="<%= course.rating_img_url_large %>" alt="...">
+<p><%= course.snippet_text %></p>
 
 
 
