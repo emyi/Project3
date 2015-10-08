@@ -31,7 +31,7 @@
 
         <h1>Log In</h1>
 
-        <form action="/login" method="post">
+        <form id="redirectForm" action="/login_redirect/" method="post">
           <div class="form-group">
             <label name="title">Email</label>
             <input type="email" class="form-control" name="email" value="" placeholder="Email">
@@ -88,8 +88,6 @@
 <% } %>
 
 
-
-
 <h1><%= course.name %></h1>
 <p><%= course.location.display_address %></p>
 
@@ -101,6 +99,15 @@
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+
+<script>
+
+  $(document).ready(function() {
+    var url = "/login_redirect/<%= course_id %>";
+    $('#redirectForm').attr('action', url);
+  });
+
+</script>
 
 
 
