@@ -48,6 +48,7 @@ coursesController.get('/courses/:id', function(req, res){
           Game.findAsync({course_id: req.params.id}).then(function(games, err){
             console.log(games);
             res.render('courses/show.ejs', {
+              course_id: req.params.id,
               course: data,
               curr_user: user.email
               // games: games,
@@ -58,6 +59,7 @@ coursesController.get('/courses/:id', function(req, res){
         Game.findAsync({course_id: req.params.id}).then(function(games, err){
             console.log(games);
             res.render('courses/show.ejs', {
+              course_id: req.params.id,
               course: data,
               // games: games,
               curr_user: null
