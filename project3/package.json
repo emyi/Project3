@@ -18,7 +18,7 @@
     "express-session": "^1.11.3",
     "jade": "~1.11.0",
     "lodash": "^3.10.1",
-    "mongoose": "^4.1.9",
+    "mongoose": "^4.1.10",
     "morgan": "~1.6.1",
     "nonce": "^1.0.3",
     "oauth": "^0.9.14",

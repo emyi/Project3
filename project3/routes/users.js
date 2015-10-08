@@ -125,6 +125,30 @@ usersController.post('/login', function (req, res){
 	});
 });
 
+
+//creates a login session here
+usersController.post('/login_redirect/:id', function (req, res){
+	//takes the email user inputs here
+	User.findOneAsync({
+		email: req.body.email
+	}).then(function(user){
+		//compares the password with the password that user inputs when trying to log in
+		user.comparePasswordAsync(req.body.password).then(function (isMatch){
+			console.log("Match: " + isMatch);
+			if(isMatch === true){
+				//if password matches, creates session
+				req.session.email = user.email;
+				res.redirect(303, '/courses/' + req.params.id);
+			}else{
+				//redirects them if password doesn't match
+				res.redirect(401, '/courses/' + req.params.id);
+			}
+
+		});
+	});
+});
+
+
 //method to view other player pages
 usersController.get('/player/:id', function (req, res) {
 	User.findByIdAsync(req.params.id).then(function (user) {

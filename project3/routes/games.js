@@ -10,7 +10,11 @@ gamesController.get('/confirm', function(req, res) {
 });
 
 gamesController.get('/group/new', function(req, res) {
-	res.render('games/new');
+	User.findAsync({}).then(function(users, err) {
+		res.render('games/new', {
+			users: users
+		});
+	});
 });
 
 module.exports = gamesController;
