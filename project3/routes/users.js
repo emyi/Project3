@@ -99,9 +99,9 @@ usersController.post('/users/create', function (req, res){
 });
 
 //gets login page here
-usersController.get('/login', function (req, res){
-	res.render('users/login.ejs');
-});
+// usersController.get('/login', function (req, res){
+// 	res.render('users/login.ejs');
+// });
 
 //creates a login session here
 usersController.post('/login', function (req, res){
