@@ -15,7 +15,7 @@
 		<tbody>
 		<% for(var i=0; i < users.length; i++) { %>
 		<tr>
-		    <td>User<%= i+1 %>&nbsp;</td>
+		    <td><a href="player/<%= users[i].id %>">User<%= i+1 %>&nbsp; </a></td>
 		    <td><%= users[i].id %></td>
 		    <td><%= users[i].email %></td>
 		</tr>
