@@ -51,7 +51,7 @@ coursesController.get('/courses/:id', function(req, res){
               course_id: req.params.id,
               course: data,
               curr_user: user.email
-              games: games,
+              // games: games,
             });
           });
         });
@@ -61,7 +61,7 @@ coursesController.get('/courses/:id', function(req, res){
             res.render('courses/show.ejs', {
               course_id: req.params.id,
               course: data,
-              games: games,
+              // games: games,
               curr_user: null
             });
           });
