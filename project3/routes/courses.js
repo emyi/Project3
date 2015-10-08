@@ -1,5 +1,6 @@
 var express = require('express');
 var coursesController = express.Router();
+var User = require('../models/user.js');
 var Game = require('../models/game.js');
 
 
