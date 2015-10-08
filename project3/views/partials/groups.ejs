@@ -1,12 +1,13 @@
-<% if( games && games.length > 0) { %>
+<% if( game && game.length > 0) { %>
 	<table>
 		<tbody>
-		<% for(var i=0; i < games.length; i++) { %>
+		<% for(var i=0; i < game.length; i++) { %>
 		<tr>
 		    <td>Group<%= i+1 %>&nbsp;</td>
-		    <td><%= games[i].id %></td>
-		    <td><%= games[i].user_ids %></td>
-		    <td><%= games[i].teetime %></td>
+		    <% for (var j = 0; j < game[i].user_ids.length; j ++) { %>
+		    	<td><%= game[i].user_ids[j].user %></td>
+		    <% } %>
+		    <td><%= game[i].teetime %></td>
 		</tr>
 		<% } %>
 		</tbody>
