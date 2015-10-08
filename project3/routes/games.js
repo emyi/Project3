@@ -4,6 +4,7 @@ var User = require('../models/user.js');
 var Course = require('../models/course.js');
 var Game = require('../models/game.js');
 
+var mongoose = require('mongoose');
 
 gamesController.get('/confirm', function(req, res) {
 	res.render('layout');
@@ -33,6 +34,7 @@ gamesController.get('/group/join/:id', function(req, res) {
 	});
 });
 
+//user creating game
 gamesController.post('/group/join/', function(req, res) {
     User.findOne({ email: req.session.email}).then(function(user, err){
     	var course = req.body.course_id;
@@ -44,6 +46,20 @@ gamesController.post('/group/join/', function(req, res) {
     	game.saveAsync().then(function(game){
     		res.json(game);
     	});
+	});
+});
+
+//user joining existing game
+gamesController.patch('/group/add/:id', function(req, res) {
+	User.findOne({ email: req.session.email}).then(function(user, err) {
+		var game_id = req.params.id;
+		Game.findByIdAsync(game_id).then(function(game, err) {
+
+			game.user_ids.push(user.id);
+			game.saveAsync().then(function(game) {
+			res.json(game);			
+			});
+		}).catch(function(err) {console.log(err)});
 	});
 });
 
