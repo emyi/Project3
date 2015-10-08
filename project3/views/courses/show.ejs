@@ -4,11 +4,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
+
 <a href="/group/join/" id="join"> Join</a>
+
 <% if( curr_user ){ %>
 
-<a href="/group/add/5616c7aad9ad562f72d0138" id="add">Add</a>
-
+<!-- <a href="/group/add/5616c7aad9ad562f72d0138" id="add">Add</a>
+ -->
 <h1>logged in user: <%= curr_user %></h1>
 <a href="/logout">Log Out</a>
 
@@ -134,15 +136,15 @@
     		});
     });
 
-    $('#add').click(function(e) {
-      e.preventDefault();
-      $.ajax({
-        url: "/group/add/5616c7aad9ad562f72d01381",
-        method: "PATCH",
-      }).done(function(data){
-        console.log(data);
-      });
-    });
+    // $('#add').click(function(e) {
+    //   e.preventDefault();
+    //   $.ajax({
+    //     url: "/group/add/:gameid",
+    //     method: "GET",
+    //   }).done(function(data){
+    //     console.log(data);
+    //   });
+    // });
 
   });
 

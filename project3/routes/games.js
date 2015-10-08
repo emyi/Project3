@@ -50,14 +50,16 @@ gamesController.post('/group/join/', function(req, res) {
 });
 
 //user joining existing game
-gamesController.patch('/group/add/:id', function(req, res) {
+gamesController.get('/group/add/:gameid', function(req, res) {
+	console.log("ENTERED FUNCTION");
 	User.findOne({ email: req.session.email}).then(function(user, err) {
-		var game_id = req.params.id;
+		var game_id = req.params.gameid;
+		console.log(game_id);
 		Game.findByIdAsync(game_id).then(function(game, err) {
-
+			console.log("user id: " + user.id);
 			game.user_ids.push(user.id);
 			game.saveAsync().then(function(game) {
-			res.json(game);			
+					
 			});
 		}).catch(function(err) {console.log(err)});
 	});
