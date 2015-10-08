@@ -4,15 +4,19 @@
 </head>
 <body>
 
+<% if (curr_user) { %>
+
+	<h1>logged in user: <%= curr_user.name %></h1>
+	<a href="/logout">Log Out</a>
+	<% } else { %>
+
+	Login
+
+	<% } %>
 
 <h1>create group</h1>
 
-	<div>
-		<% for (i = 0; i < users.length; i ++) { %>
-			<%= users[i].name %> - Handicap: <%= users[i].handicap %><br/>
-		<% } %>
-	<div>
-
+<button type="submit">Join</button>
 
 </body>
 </html>
