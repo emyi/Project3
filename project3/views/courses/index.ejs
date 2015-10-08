@@ -6,7 +6,9 @@
 </head>
 <body>
 
-<h1> Golf Courses </h1>
+  <% include ../partials/header %>
+
+<h1> Golf Courses in the Area! </h1>
 
 <!-- <div id="search-container">
    <form action="/" method="get" id="search-form">
@@ -15,12 +17,13 @@
 <input type="text" name="searchTerm" id="search_term" value="" placeholder="Search for Golf Course" />
 </p> -->
 
-<div class="row">
-  <div class="col-sm-6 col-md-4">
+<div class="wrapper">
+  <div id="inner">
     <% for (i = 0; i < courses.length; i ++) { %>
-      <div class="thumbnail">
+      <div class="column">
         <img src="<%= courses[i].rating_img_url_large %>" alt="...">
         <div class="caption">
+          <img src="<%= courses[i].image_url %>" class="photo">
           <h3><%= courses[i].name %></h3>
           <p><%= courses[i].snippet_text %></p>
           <p><a href="courses/<%= courses[i].id %>" class="btn btn-primary" role="button">More Info!</a></p>
