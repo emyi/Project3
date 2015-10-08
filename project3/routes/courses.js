@@ -50,7 +50,7 @@ coursesController.get('/courses/:id', function(req, res){
             res.render('courses/show.ejs', {
               course: data,
               curr_user: user.email
-              // games: games,
+              games: games,
             });
           });
         });
@@ -59,7 +59,7 @@ coursesController.get('/courses/:id', function(req, res){
             console.log(games);
             res.render('courses/show.ejs', {
               course: data,
-              // games: games,
+              games: games,
               curr_user: null
             });
           });
