@@ -17,13 +17,16 @@ gamesController.get('/group/new', function(req, res) {
 	});
 });
 
-gamesController.get('/group/join/', function(req, res) {
+gamesController.post('/group/join/', function(req, res) {
     User.findOne({ email: req.session.email}).then(function(user, err){
+    	var course = req.body.course_id;
+
 		var game = new Game ({
-        	user_ids: [user.id]
+        	user_ids: [user.id],
+        	course_id: course
     	});
     	game.saveAsync().then(function(game){
-    		console.log(game);
+    		res.json(game);
     	});
 	});
 });
