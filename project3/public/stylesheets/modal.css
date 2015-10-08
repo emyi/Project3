@@ -1,4 +1,4 @@
-.modalDialog {
+/*.modalDialog {
 	position: fixed;
 	font-family: Arial, Helvetica, sans-serif;
 	top: 0;
@@ -51,3 +51,112 @@
 }
 
 .close:hover { background: #00d9ff; }
+*/
+.navbar-default {
+background-color: rgba(255, 255, 255, 0.3);
+}
+.navbar-default .navbar-brand {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ecdbff;
+}
+.navbar-default .navbar-text {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ecdbff;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ecdbff;
+background-color: rgba(255, 255, 255, 0.3);
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ecdbff;
+background-color: rgba(255, 255, 255, 0.3);
+}
+.navbar-default .navbar-toggle {
+  border-color: #ffffff;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+background-color: rgba(255, 255, 255, 0.3);
+}
+.navbar-default .navbar-toggle .icon-bar {
+background-color: rgba(255, 255, 255, 0.3);
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ecf0f1;
+}
+.navbar-default .navbar-link {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-link:hover {
+  color: #ecdbff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ecdbff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ecdbff;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+#homepage {
+	background-image: url("https://www.triplecrowngolf.com/SiteDesign/splash1/image1.aspx");
+/*background: url(images/bg.jpg) no-repeat center center fixed; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.search-box {
+	/*text-align: center;*/
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+
+}
+
+.box {
+	/*position: absolute;*/
+	 width: 100px;
+    padding: 10px;
+    margin-left: 78px;
+    /*margin: 5px;*/
+    background-color: #FF6B00;
+
+}
+
+.location-box {
+	width: 250px;
+	text-align: center;
+}
+
+.navbar-collapse {
+	margin-bottom: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
