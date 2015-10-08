@@ -60,7 +60,7 @@ coursesController.get('/courses/:id', function(req, res){
             res.render('courses/show.ejs', {
               course: data,
               games: games,
-              curr_user: null
+              // curr_user: null
             });
           });
       }
