@@ -4,6 +4,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
+<a href="/group/join/" id="join"> Join</a>
 <% if( curr_user ){ %>
 
 <h1>logged in user: <%= curr_user %></h1>
@@ -89,9 +90,11 @@
 
 
 <h1><%= course.name %></h1>
-<p><%= course.location.display_address %></p>
+<p>Address:<%= course.location.display_address %></p>
 
-<p><%= course.display_phone %></p>
+<p>Phone Number:<%= course.display_phone %></p>
+<p>URL:<%= course.url %></p>
+<img src="<%= course.rating_img_url_large %>" alt="...">
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -105,6 +108,26 @@
   $(document).ready(function() {
     var url = "/login_redirect/<%= course_id %>";
     $('#redirectForm').attr('action', url);
+
+    // $.ajax({
+    // 	url: "/group/join/",
+    // 	method: "POST"
+    // }).done(function(data){
+    // 	console.log(data);
+    // 	});
+    $('#join').click(function(e){
+    	e.preventDefault();
+    	var course = "<%= course.id %>";
+    	console.log(course);
+    	$.ajax({
+    		url: "/group/join/",
+    		method: "POST",
+    		data: {course_id: course}
+    	}).done(function(data){
+    		console.log(data);
+
+    		});
+    });
   });
 
 </script>
