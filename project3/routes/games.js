@@ -17,4 +17,15 @@ gamesController.get('/group/new', function(req, res) {
 	});
 });
 
+gamesController.get('/group/join/', function(req, res) {
+    User.findOne({ email: req.session.email}).then(function(user, err){
+		var game = new Game ({
+        	user_ids: [user.id]
+    	});
+    	game.saveAsync().then(function(game){
+    		console.log(game);
+    	});
+	});
+});
+
 module.exports = gamesController;
