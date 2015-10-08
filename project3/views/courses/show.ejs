@@ -89,9 +89,11 @@
 
 
 <h1><%= course.name %></h1>
-<p><%= course.location.display_address %></p>
+<p>Address:<%= course.location.display_address %></p>
 
-<p><%= course.display_phone %></p>
+<p>Phone Number:<%= course.display_phone %></p>
+<p>URL:<%= course.url %></p>
+<img src="<%= course.rating_img_url_large %>" alt="...">
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
