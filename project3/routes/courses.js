@@ -50,8 +50,9 @@ coursesController.get('/courses/:id', function(req, res){
             res.render('courses/show.ejs', {
               course_id: req.params.id,
               course: data,
-              curr_user: user.email
-              // games: games,
+              curr_user: user.email,
+              game: games,
+              User: User
             });
           });
         });
@@ -61,8 +62,9 @@ coursesController.get('/courses/:id', function(req, res){
             res.render('courses/show.ejs', {
               course_id: req.params.id,
               course: data,
-              // games: games,
-              curr_user: null
+              game: games,
+              curr_user: null,
+              User: User
             });
           });
       }
