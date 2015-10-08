@@ -1,12 +1,109 @@
 <html>
 <head>
-	<title>Course</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <title>Course</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
+<% if( curr_user ){ %>
+
+<h1>logged in user: <%= curr_user %></h1>
+<a href="/logout">Log Out</a>
+
+<% } else { %>
+
+
+
+
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Not Logged in? Click Here to Start</button>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">x</button>
+                </div>
+
+                <ul class="nav nav-tabs">
+                  <li role="presentation" class="active"><a href="#login" data-toggle="tab">Login</a></li>
+                  <li role="presentation"><a href="#register" data-toggle="tab">Register</a></li>
+                </ul>
+                <div class="tab-content">
+      <div class="tab-pane active" id="login">  
+
+        <h1>Log In</h1>
+
+        <form action="/login" method="post">
+          <div class="form-group">
+            <label name="title">Email</label>
+            <input type="email" class="form-control" name="email" value="" placeholder="Email">
+          </div>
+
+          <div class="form-group">
+            <label name="title">Password</label>
+            <input type="text" class="form-control" name="password" value="" placeholder="Password">
+          </div>
+
+          <button type="submit" class="btn btn-default">Log In</button>
+        </form>   
+      </div>
+  
+
+
+      <div class="tab-pane" id="register">  
+
+        <h1>New User</h1>
+
+        <form action="/users/create" method="post">
+          <div class="form-group">
+                <label name="title">Name</label>
+                <input type="text" name="name" value=""/>
+          </div>
+
+          <div class="form-group">
+            <label name="title">Email</label>
+            <input type="text" name="email" value=""/>
+          </div>
+
+          <div class="form-group">
+            <label name="title">Password</label>
+            <input type="text" name="password" value=""/>
+          </div>
+
+          <div class="form-group">
+            <label name="title">Location</label>
+            <input type="text" name="location" value=""/>
+          </div>
+
+          <div class="form-group">
+            <label name="title">Handicap</label>
+            <input type="text" name="handicap" value=""/>
+          </div>
+
+          <button type="submit" class="btn btn-default">Log In</button>
+        </form> 
+        </div>    
+    </div>
+              </div>
+            </div>
+          </div>
+<% } %>
+
+
+
+
 <h1><%= course.name %></h1>
 <p><%= course.location.display_address %></p>
 
-<% include ../partials/groups %>
+<p><%= course.display_phone %></p>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+
+
+
 </body>
 </html>

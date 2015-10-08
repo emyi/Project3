@@ -1,6 +1,7 @@
 var express = require('express');
 var coursesController = express.Router();
 var Game = require('../models/game.js');
+var User = require('../models/user.js');
 
 
 var yelp = require("yelp").createClient({
@@ -48,8 +49,8 @@ coursesController.get('/courses/:id', function(req, res){
             console.log(games);
             res.render('courses/show.ejs', {
               course: data,
-              games: games,
               curr_user: user.email
+              // games: games,
             });
           });
         });
@@ -58,7 +59,7 @@ coursesController.get('/courses/:id', function(req, res){
             console.log(games);
             res.render('courses/show.ejs', {
               course: data,
-              games: games,
+              // games: games,
               curr_user: null
             });
           });
