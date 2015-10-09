@@ -73,6 +73,7 @@ usersController.post('/users/:id/update', function (req, res) {
 	  	User.findById(id, function(error, user) {
 		    if(req.body.location) user.location = req.body.location;
 		    if(req.body.handicap) user.handicap = req.body.handicap;
+		    if(req.body.name) user.name = req.body.name;
 		    user.save(function(error) {
 	      		if(error) res.json({messsage: 'Could not update user b/c:' + error});
 	    		res.redirect(303, '/users/' + user.id);  
