@@ -25,7 +25,7 @@
       <div class="column">
         <img src="<%= courses[i].rating_img_url_large %>" alt="...">
         <div class="caption">
-          <img src="<%= courses[i].image_url %>" class="photo">
+          <img src="<%= courses[i].image_url %>" class="big-image">
           <h3><%= courses[i].name %></h3>
           <p><%= courses[i].snippet_text %></p>
           <p><a href="courses/<%= courses[i].id %>" class="btn btn-primary" role="button">More Info!</a></p>
@@ -114,6 +114,18 @@
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+
+<script>
+
+$(document).ready(function() {
+  $('.big-image').each(function() {
+    var url = $(this).attr('src');
+    url = url.replace('ms', 'l');
+    $(this).attr('src', url);
+  });
+});
+
+</script>
 
 
 </body>
