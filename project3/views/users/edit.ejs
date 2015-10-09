@@ -1,15 +1,75 @@
-<h1>Edit User</h1>
-<% include ../partials/header %>
-<!-- form to edit user user -->
-<form action="/users/<%= curr_user._id%>/update" method="POST">
 
-    <!-- location field -->
-    <label name="title">Location</label>
-    <input type="text" name="location" value=""/>
-    <br/>
-    <!-- handicap field -->
-    <label name="title">Handicap</label>
-    <input type="text" name="handicap" value=""/>
-    <br/>
-    <input type="submit" value="Edit">
-</form>
+<html>
+<head>
+	<title></title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img src="../../pictures/golflogo.png">
+
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+		<i class="fa fa-facebook-official fa-3x right black"><br></i>
+		<i class="fa fa-twitter-square fa-3x right black"></i>
+		<i class="fa fa-google-plus-square fa-3x right black"></i>
+        <h1><a class="navbar-brand" href="#">Sign In</a><h1>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-2">
+			</div>
+			<div class="panel panel-info col-lg-8">
+				<div class="panel-heading"><h1>Edit User Info</h1>
+				</div>
+				<div class="panel-body">
+			<!-- form to edit user user -->
+					<form action="/users/<%= curr_user._id%>/update" method="POST">
+
+						<label name="title">Name</label>
+					    <input type="text" name="name" class="form-control"/>
+					    <br/>			
+
+					    <!-- location field -->
+					    <label name="title">Location</label>
+					    <input type="text" name="location" class="form-control"/>
+					    <br/>
+					    <!-- handicap field -->
+					    <label name="title">Handicap</label>
+					    <input type="text" name="handicap" class="form-control"/>
+					    <br/>
+					    <input type="submit" value="Edit">
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+
