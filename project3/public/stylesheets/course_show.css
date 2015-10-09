@@ -2,32 +2,40 @@
 	float: right;
 	text-align: left;
 	width: 500px;
-	margin-right: 100px;
-}
-
-.big-image {
-	margin-left: 25px;
-}
-
-#groups {
-	margin-left: 25px;
+	/*margin-right: 100px;*/
 }
 
 #links {
-	margin-left: 25px;
+	/*margin-left: 25px;*/
 	font-size: 20px;
 }
 
 #currUser {
-	margin-right: 25px;
+	/*margin-right: 25px;*/
 	font-size: 15px;
-	text-align: right;
-}
-
-button {
-	margin-left: 25px;
+	float: right;
 }
 
 #userName {
 	text-align: center;
+}
+
+#contactInfo {
+	margin-top: 30px;
+}
+
+.container {
+	margin: ;
+}
+
+#text {
+	margin-top: 30px;
+}
+#courseName {
+	margin-top: 0px;
+}
+
+#specs {
+	margin-top: 10px;
+	font-weight: bold;
 }
