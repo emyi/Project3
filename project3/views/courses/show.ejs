@@ -4,17 +4,18 @@
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/stylesheets/course_show.css">
+  
 </head>
 <body>
 
-<a href="/group/join/" id="join"> Create Group</a>
 <% include ../partials/header.ejs %>
 
 <% if( curr_user ){ %>
 
 <h1 id="currUser">logged in user: <%= curr_user %></h1>
-	<div id="links">
-		<a href="/users/<%= curr_user_id %>">Profile</a>
+  <div id="links">
+    <a href="/users/<%= curr_user_id %>">Profile</a>
+    <a href="/group/join/" id="join"> Create Group</a>
 		<a href="/logout">Log Out</a>
 	</div>
 <% } else { %>
@@ -46,7 +47,7 @@
 
           <div class="form-group">
             <label name="title">Password</label>
-            <input type="text" class="form-control" name="password" value="" placeholder="Password">
+            <input type="password" class="form-control" name="password" value="" placeholder="Password">
           </div>
 
           <button type="submit" class="btn btn-default">Log In</button>
@@ -153,6 +154,7 @@
     // }).done(function(data){
     // 	console.log(data);
     // 	});
+  
     $('#join').click(function(e){
     	e.preventDefault();
     	var course = "<%= course.id %>";
@@ -163,9 +165,10 @@
     		data: {course_id: course}
     	}).done(function(data){
     		console.log(data);
-
+        location.reload();        
     		});
     });
+  
     $('.big-image').each(function() {
     	var url = $(this).attr('src');
     	url = url.replace('ms', 'l');
@@ -182,6 +185,8 @@
     // });
 
   });
+
+
 
 </script>
 

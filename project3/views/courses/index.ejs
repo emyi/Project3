@@ -37,12 +37,12 @@
   <div id="inner">
     <% for (i = 0; i < courses.length; i ++) { %>
       <div class="column">
-        <img src="<%= courses[i].rating_img_url_large %>" alt="...">
         <div class="caption">
           <img src="<%= courses[i].image_url %>" class="big-image">
           <h3 class="brown"><%= courses[i].name %></h3>
+          <img src="<%= courses[i].rating_img_url_large %>" alt="...">
           <p class="italic"><%= courses[i].snippet_text %></p>
-          <p><a href="courses/<%= courses[i].id %>" class="btn btn-primary" role="button">More Info!</a></p>
+          <p><a href="courses/<%= courses[i].id %>" class="btn btn-primary" role="button">More Info!</a><img src="https://s3-media1.fl.yelpcdn.com/assets/srv0/developer_pages/dc8ff90d5d7d/assets/img/Powered_By_Yelp_Black.png" class="right"></p>
 
 
        <!--     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
