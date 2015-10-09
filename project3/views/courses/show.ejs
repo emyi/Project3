@@ -12,10 +12,11 @@
 
 <% if( curr_user ){ %>
 
-<h1>logged in user: <%= curr_user %></h1>
-<a href="/users/<%= curr_user_id %>">Profile</a>
-<a href="/logout">Log Out</a>
-
+<h1 id="currUser">logged in user: <%= curr_user %></h1>
+	<div id="links">
+		<a href="/users/<%= curr_user_id %>">Profile</a>
+		<a href="/logout">Log Out</a>
+	</div>
 <% } else { %>
 
 
@@ -98,9 +99,8 @@
 
 <div class="row">
   <div class="col-xs-6 col-md-3">
-    <a href="#" class="thumbnail" style="height:300px">
-      <img src="..." alt="...">
-    </a>
+
+      <img src="<%= course.image_url %>" class="big-image">
   </div>
   <div id="courseInfo">
 	<h1><%= course.name %></h1>
@@ -151,7 +151,11 @@
 
     		});
     });
-
+    $('.big-image').each(function() {
+    	var url = $(this).attr('src');
+    	url = url.replace('ms', 'l');
+    	$(this).attr('src', url);
+  	});
     // $('#add').click(function(e) {
     //   e.preventDefault();
     //   $.ajax({
