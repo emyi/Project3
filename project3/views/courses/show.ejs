@@ -4,11 +4,9 @@
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/stylesheets/course_show.css">
+  
 </head>
 <body>
-
-<a href="/group/join/" id="join"> Create Group</a>
-
 
 <% include ../partials/header.ejs %>
 
@@ -24,6 +22,7 @@
 			<button id="logout"><a href="/logout">Log Out</a></button>
 		</div>
 	<% } else { %>
+
 
 
 
@@ -169,6 +168,7 @@
     // }).done(function(data){
     // 	console.log(data);
     // 	});
+  
     $('#join').click(function(e){
     	e.preventDefault();
     	var course = "<%= course.id %>";
@@ -179,9 +179,10 @@
     		data: {course_id: course}
     	}).done(function(data){
     		console.log(data);
-
+        location.reload();        
     		});
     });
+  
     $('.big-image').each(function() {
     	var url = $(this).attr('src');
     	url = url.replace('ms', 'l');
@@ -198,6 +199,8 @@
     // });
 
   });
+
+
 
 </script>
 
