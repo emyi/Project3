@@ -24,10 +24,11 @@
 	text-align: right;
 }
 
-button {
-	margin-left: 25px;
-}
-
 #userName {
 	text-align: center;
+}
+
+#logout {
+	float: right;
+	margin-right: 25px;
 }

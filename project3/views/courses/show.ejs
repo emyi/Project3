@@ -14,9 +14,8 @@
 
 	<h1 id="currUser">logged in user: <%= curr_user_name %></h1>
 	<div id="links">
-		<a href="/users/<%= curr_user_id %>">Profile</a>
-		<a href="/logout">Log Out</a>
-		<button></button>
+		<button><a href="/users/<%= curr_user_id %>">My Profile</a></button>
+		<button id="logout"><a href="/logout">Log Out</a></button>
 	</div>
 <% } else { %>
 
@@ -130,7 +129,6 @@
 
 	<!-- display different groups here -->
 	<div id="groups">
-		<h1>Groups</h1>
 		<% include ../partials/groups.ejs %>
 	</div>
 
