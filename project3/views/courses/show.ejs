@@ -6,10 +6,6 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/course_show.css">
 </head>
 <body>
-
-<a href="/group/join/" id="join"> Create Group</a>
-
-
 <% include ../partials/header.ejs %>
 
 <div class="container">
@@ -135,8 +131,8 @@
 			<p><%= course.snippet_text %></p>
 		</div>
 		<div id="contactInfo">
-			<p id="address">Address: <%= course.location.display_address %></p>
-			<p id="phone">Phone Number: <%= course.display_phone %></p>
+			<p id="address"><%= course.location.display_address %></p>
+			<p id="phone"><%= course.display_phone %></p>
 			<p id="website"><%= course.url %></p>
 		</div>
 	  </div>
@@ -179,7 +175,8 @@
     		data: {course_id: course}
     	}).done(function(data){
     		console.log(data);
-
+    		location.reload();
+    		// res.render('courses/show.ejs');
     		});
     });
     $('.big-image').each(function() {
