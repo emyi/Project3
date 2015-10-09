@@ -3,7 +3,7 @@
 	<title></title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
+	<link rel="stylesheet" type="text/css" href="/stylesheets/profile.css">
 </head>
 <body>
 
@@ -27,45 +27,45 @@
 
 	</div>
 
+<div class=container>
 	<div class="row col-md-9">
 	  <div class="col-xs-6 col-md-3">
 	    <a href="#" class="thumbnail">
 	      <img src="http://images.askmen.com/galleries/men/tiger-woods/pictures/tiger-woods-picture-1.jpg">
 	    </a>
 	  </div>
-
+	  <div>
 		<h1> <%= curr_user.name %> </h1>
-		<h2> <%= curr_user.email %> </h2>
+		<h3> <%= curr_user.email %> </h3>
 		<h3> <%= curr_user.location %> </h3>
 		<h3> Handicap: <%= curr_user.handicap %> </h3>
-
+	</div>
 	</div>
 
-	<div class="thumbnails col-md-9">
+	<div class="thumbnails col-md-12">
 		<div class="row">
 			<div class="col-xs-6 col-md-3">
-		    <a href="#" class="thumbnail">
-		      <img src="https://avatars3.githubusercontent.com/u/13632316?v=3&s=400">
-		    </a>
+
+				  	<h3>Recently played with</h3>
+
+			</div>
+			<div class="col-xs-6 col-md-2">
+		      <img src="https://avatars3.githubusercontent.com/u/13632316?v=3&s=400" class="img-circle" style="height: 150px; width: 150px">
 	  		</div>
-			<div class="col-xs-6 col-md-3">
-		    <a href="#" class="thumbnail">
-		      <img src="https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/3978/thumb_bHZp1AU_DOcrHlCrjrJvlcdnPOaTZWocjfSdkCVxWuE.jpeg">
-		    </a>
+			<div class="col-xs-6 col-md-2">
+		      <img src="https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/3978/thumb_bHZp1AU_DOcrHlCrjrJvlcdnPOaTZWocjfSdkCVxWuE.jpeg" class="img-circle" style="height: 150px; width: 150px">
 	  		</div>
-			<div class="col-xs-6 col-md-3">
-		    <a href="#" class="thumbnail">
-		      <img src="https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/5932/thumb_parrot.jpg">
-		    </a>
+			<div class="col-xs-6 col-md-2">
+		      <img src="https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/5932/thumb_parrot.jpg" class="img-circle" style="height: 150px; width: 150px">
+
 	  		</div>
-	  		<div class="col-xs-6 col-md-3">
-		    <a href="#" class="thumbnail">
-		      <img src="http://keyanbagheri.com/images/headshot.jpg">
-		    </a>
+	  		<div class="col-xs-6 col-md-2">
+		      <img src="http://keyanbagheri.com/images/headshot.jpg" class="img-circle" style="height: 150px; width: 150px">
 	  		</div>
 
 		</div>
 	</div>
+</div>
 
 </body>
 </html>
