@@ -7,7 +7,6 @@
   
 </head>
 <body>
-
 <% include ../partials/header.ejs %>
 
 <div class="container">
@@ -26,7 +25,7 @@
 
 
 
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Not Logged in? Click Here to Start</button>
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="background-color: #FF6B00">Get Started</button>
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content col-lg-10">
@@ -134,9 +133,9 @@
 			<p><%= course.snippet_text %></p>
 		</div>
 		<div id="contactInfo">
-			<p id="address">Address: <%= course.location.display_address %></p>
-			<p id="phone">Phone Number: <%= course.display_phone %></p>
-			<p id="website"><%= course.url %></p>
+			<p id="address"><%= course.location.display_address %></p>
+			<p id="phone"><%= course.display_phone %></p>
+			<a href="<%= course.url %>" id="website"> Yelp</a>
 		</div>
 	  </div>
 
@@ -179,7 +178,9 @@
     		data: {course_id: course}
     	}).done(function(data){
     		console.log(data);
-        location.reload();        
+
+    		location.reload();
+    		// res.render('courses/show.ejs');
     		});
     });
   
