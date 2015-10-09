@@ -6,14 +6,17 @@
 
 </head>
 <body>
-	<div class="page-header">
 
-		<h1>LOGO <small>Courses</small></h1>
+	<% include ../partials/header %>
+	<div class="page-header">
 
 		<% if( curr_user ){ %>
 
 		<p>logged in user: <%= curr_user.name %></p>
 		<a href="/logout">Log Out</a>
+		<br/>
+		<a href="/users/<%= curr_user._id%>/edit">Edit</a>
+
 
 		<% } else { %>
 
@@ -30,10 +33,10 @@
 	    </a>
 	  </div>
 
-		<h1> <%= curr_user.email %> </h1>
 		<h1> <%= curr_user.name %> </h1>
-		<h1> <%= curr_user.location %> </h1>
-		<h1> Handicap: <%= curr_user.handicap %> </h1>
+		<h2> <%= curr_user.email %> </h2>
+		<h3> <%= curr_user.location %> </h3>
+		<h3> Handicap: <%= curr_user.handicap %> </h3>
 
 	</div>
 
@@ -63,8 +66,6 @@
 
 		</div>
 	</div>
-
-<a href="/users/<%= curr_user._id%>/edit">Edit</a>
 
 </body>
 </html>
