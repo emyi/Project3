@@ -135,7 +135,7 @@ background-color: rgba(255, 255, 255, 0.3);
 	/*position: absolute;*/
 	 width: 100px;
     padding: 10px;
-    margin-left: 56px;
+    /*margin-left: 56px;*/
     /*margin: 5px;*/
     background-color: #FF6B00;
 
@@ -188,19 +188,23 @@ margin: 50px auto;
 	-o-transition: all .2s ease;
 	transition: all .2s ease;
 }
+.navbar-header img {
+	height: 100px;
+}
 
 /*.column img {
 	width: 100%;
 }
 */
 
+#search-container {
+	text-align: center;
+}
 
-
-
-
-
-
-
-
+.location-bar {
+	position: relative;
+	margin: 0 auto;
+	width: 50%;
+}
 
 
