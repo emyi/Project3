@@ -27,4 +27,27 @@
 		
 		</tbody>
 	</table>
+
+	<% for (var i = 0; i < game.length; i ++) { %> 
+		<div class="panel panel-default col-md-3">
+				<div class="panel-body"><h3>Group <%= i+1 %> &nbsp;</h3>
+					<div class="row">
+						<% for (var j = 0; j < 2; j ++) { %> 
+
+							<%= game[i].user_ids[j].name %>
+							
+						<% } %>
+					</div>
+					<div class="row">
+						<% for (var j = 2; j < game[i].user_ids.length; j ++) { %> 
+						
+							<%= game[i].user_ids[j].name %>
+					
+						<% } %>
+					</div>
+				</div>
+
+		</div>
+	<% } %>
+
 <% } %>
