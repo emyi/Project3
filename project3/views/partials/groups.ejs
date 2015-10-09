@@ -5,7 +5,7 @@
 		<tr>
 		    <td>Group<%= i+1 %>&nbsp;</td>
 			    <% for (var j = 0; j < game[i].user_ids.length; j ++) { %>
-			    	<td><%= game[i].user_ids[j] %></td>
+			    	<td><%= game[i].user_ids[j].name %></td>
 			    <% } %>
 		    <td><%= game[i].teetime %></td>
 		</tr>
