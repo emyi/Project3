@@ -24,7 +24,7 @@
 <p class="blue"><font size="3">Featured Golf Course<font></p>
     <div class="rightr">
       <p>Welcome to PGA WEST, the 2,000 acre golf and lifestyle community that is both location and legend. Ideally situated in the beautiful town of La Quinta, California, PGA WEST is located in the preferred destination of the greater Palm Springs area. Over six courses a total of 90 holes of golf, both on-property and at nearby PGA WEST, designed by Pete Dye, Jack Nicklaus and Greg Norman. The courses regularly play host to the Bob Hope Chrysler Classic charity golf tournament. La Quinta was expanded to its current size by Landmark Land Company in 1989.</p>
-      <p class="box">More Info!</p>
+      <p class="box green">More Info!</p>
     </div>  
   <img alt="" src="../pictures/featured.golf.course.png" class="hard"/>
   <div class="text">
@@ -37,12 +37,12 @@
   <div id="inner">
     <% for (i = 0; i < courses.length; i ++) { %>
       <div class="column">
-        <img src="<%= courses[i].rating_img_url_large %>" alt="...">
+        <img src="<%= courses[i].image_url %>" class="big-image">
         <div class="caption">
-          <img src="<%= courses[i].image_url %>" class="big-image">
-          <h3 class="brown"><%= courses[i].name %></h3>
+          <h3 class="brown course-name"><%= courses[i].name %></h3>
+          <img src="<%= courses[i].rating_img_url_large %>" alt="...">
           <p class="italic"><%= courses[i].snippet_text %></p>
-          <p><a href="courses/<%= courses[i].id %>" class="btn btn-primary" role="button">More Info!</a></p>
+          <div class="icons"><a href="courses/<%= courses[i].id %>" class="btn btn-primary" role="button">More Info!</a><img src="https://s3-media4.fl.yelpcdn.com/assets/srv0/developer_pages/7e704c57a423/assets/img/yelp_logo_75x38.png" class="yelp"></div>
 
 
        <!--     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
