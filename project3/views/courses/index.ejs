@@ -18,16 +18,26 @@
 <label for="search_term">Enter location: </label>
 <input type="text" name="searchTerm" id="search_term" value="" placeholder="Search for Golf Course" />
 </p> -->
-
 <div class="wrapper">
+  <tr>
+<div class="image">
+<p>Featured Golf Course</p>
+  <img alt="" src="../pictures/featured.golf.course.png" class="hard"/>
+  <div class="text">
+    <h1 class="white italic">PGA West</h1>
+    <h4>PGA Championship Course Par 72</h4>
+    <h4>Number One Club House in California</h4>
+  </div>
+</div>
+</tr>
   <div id="inner">
     <% for (i = 0; i < courses.length; i ++) { %>
       <div class="column">
         <img src="<%= courses[i].rating_img_url_large %>" alt="...">
         <div class="caption">
           <img src="<%= courses[i].image_url %>" class="big-image">
-          <h3><%= courses[i].name %></h3>
-          <p><%= courses[i].snippet_text %></p>
+          <h3 class="brown"><%= courses[i].name %></h3>
+          <p class="italic"><%= courses[i].snippet_text %></p>
           <p><a href="courses/<%= courses[i].id %>" class="btn btn-primary" role="button">More Info!</a></p>
 
 
