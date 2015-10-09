@@ -55,6 +55,7 @@ coursesController.get('/courses/:id', function(req, res){
               course_id: req.params.id,
               course: data,
               curr_user: user.email,
+              curr_user_id: user.id,
               game: games,
               User: User
             });

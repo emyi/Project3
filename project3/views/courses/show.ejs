@@ -2,21 +2,20 @@
 <head>
   <title>Course</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../../public/stylesheets/course_show.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/course_show.css">
 </head>
 <body>
 
 <a href="/group/join/" id="join"> Create Group</a>
+<% include ../partials/header.ejs %>
 
 <% if( curr_user ){ %>
 
-<!-- <a href="/group/add/5616c7aad9ad562f72d0138" id="add">Add</a>
- -->
 <h1>logged in user: <%= curr_user %></h1>
+<a href="/users/<%= curr_user_id %>">Profile</a>
 <a href="/logout">Log Out</a>
 
 <% } else { %>
-
 
 
 
@@ -102,28 +101,15 @@
       <img src="..." alt="...">
     </a>
   </div>
-
-
-
-<h1><%= course.name %></h1>
-<img src="<%= course.rating_img_url_large %>" alt="...">
-<p>Address:<%= course.location.display_address %></p>
-
-<p>Phone Number:<%= course.display_phone %></p>
-<p><%= course.url %></p>
-<p><%= course.snippet_text %></p>
-
-
-
-	</div>
-
-	<div id="courseInfo">
-		<h1 id="courseName"><%= course.name %></h1>
-		<p>Address:<%= course.location.display_address %></p>
-		<p>Phone Number:<%= course.display_phone %></p>
-		<p>URL:<%= course.url %></p>
-		<img src="<%= course.rating_img_url_large %>" alt="...">
-	</div>
+  <div id="courseInfo">
+	<h1><%= course.name %></h1>
+	<img src="<%= course.rating_img_url_large %>" alt="...">
+	<p>Address:<%= course.location.display_address %></p>
+	<p>Phone Number:<%= course.display_phone %></p>
+	<p><%= course.url %></p>
+	<p><%= course.snippet_text %></p>
+  </div>
+</div>
 
 
 	<!-- display different groups here -->
@@ -131,10 +117,6 @@
 		<h1>Groups</h1>
 		<% include ../partials/groups.ejs %>
 	</div>
-
->>>>>>> emyi-master
-
-<% include ../partials/groups.ejs %>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
