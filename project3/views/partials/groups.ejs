@@ -1,31 +1,14 @@
-<% if( game && game.length > 0) { %>
-    <table>
-        <tbody>
-            <h1>Groups</h1>
-            <tr>
-                <td>Time</td>
-                <td>Player 1</td>
-                <td>Player 2</td>
-                <td>Player 3</td>
-                <td>Player 4</td>
-            </tr>
-        <% for(var i=0; i < game.length; i++) { %>  
+<% for (var i = 0; i < game.length; i ++) { %> 
+        <div class="panel panel-default col-md-3">
+                <div class="panel-body"><h3>Group <%= i+1 %> :00pm &nbsp;</h3><a href="/group/add/<%= game[i].id %>" id="add">Add</a>
+                    <div class="row">
+                        <% for (var j = 0; j < game[i].user_ids.length; j ++) { %> 
+                            
+                            <%= game[i].user_ids[j].name %>
+                            
+                        <% } %>
+                    </div>
+                </div>
 
-        <tr>
-            <td><%= i+1 %>:00 pm&nbsp;</td>
-
-                <% for (var j = 0; j < game[i].user_ids.length; j ++) { %>
-                    <td id="userName"><%= game[i].user_ids[j].name %></td>
-                <% } %>
-            
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><a href="/group/add/<%= game[i].id %>" id="add">Add</a></td>
-
-        </tr>
-        <% } %>
-        
-        </tbody>
-    </table>
-<% } %>
+        </div>
+    <% } %>
