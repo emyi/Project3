@@ -138,6 +138,7 @@ background-color: rgba(255, 255, 255, 0.3);
     /*margin-left: 56px;*/
     /*margin: 5px;*/
     background-color: #FF6B00;
+    border-radius: 10px;
 
 }
 
@@ -247,13 +248,24 @@ margin: 50px auto;
 }
 .image .text {
     position:absolute;
-    top:370px;
+    top:300px;
     left:10px;
-    width:300px;
+    width:280px;
 }
 .white {
 	color: white;
 }
+
+.blue {
+	color: #6386B6;
+}
+
+.rightr {
+	float: right;
+	width: 350px;
+}
+
+
 
 
 
