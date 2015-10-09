@@ -12,10 +12,11 @@
 
 <% if( curr_user ){ %>
 
-<h1 id="currUser">logged in user: <%= curr_user %></h1>
+	<h1 id="currUser">logged in user: <%= curr_user_name %></h1>
 	<div id="links">
 		<a href="/users/<%= curr_user_id %>">Profile</a>
 		<a href="/logout">Log Out</a>
+		<button></button>
 	</div>
 <% } else { %>
 
