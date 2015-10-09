@@ -7,130 +7,143 @@
 </head>
 <body>
 
-<a href="/group/join/" id="join"> Create Group</a>
 <% include ../partials/header.ejs %>
 
-<% if( curr_user ){ %>
+<div class="container">
+	<% if( curr_user ){ %>
+		<div id="top">
+			<a href="/group/join/" id="join"> Create Group</a>
+			<a id="currUser">logged in user: <%= curr_user_name %></a>
+		</div>
 
-	<h1 id="currUser">logged in user: <%= curr_user_name %></h1>
-	<div id="links">
-		<button><a href="/users/<%= curr_user_id %>">My Profile</a></button>
-		<button id="logout"><a href="/logout">Log Out</a></button>
-	</div>
-<% } else { %>
-
-
-
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Not Logged in? Click Here to Start</button>
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">x</button>
-                </div>
-
-                <ul class="nav nav-tabs">
-                  <li role="presentation" class="active"><a href="#login" data-toggle="tab">Login</a></li>
-                  <li role="presentation"><a href="#register" data-toggle="tab">Register</a></li>
-                </ul>
-                <div class="tab-content">
-      <div class="tab-pane active" id="login">  
-
-        <h1>Log In</h1>
-
-        <form id="redirectForm" action="/login_redirect/" method="post">
-          <div class="form-group">
-            <label name="title">Email</label>
-            <input type="email" class="form-control" name="email" value="" placeholder="Email">
-          </div>
-
-          <div class="form-group">
-            <label name="title">Password</label>
-            <input type="text" class="form-control" name="password" value="" placeholder="Password">
-          </div>
-
-          <button type="submit" class="btn btn-default">Log In</button>
-        </form>   
-      </div>
-  
-
-
-      <div class="tab-pane" id="register">  
-
-        <h1>New User</h1>
-
-        <form action="/users/create" method="post">
-          <div class="form-group">
-                <label name="title">Name</label>
-                <input type="text" name="name" value=""/>
-          </div>
-
-          <div class="form-group">
-            <label name="title">Email</label>
-            <input type="text" name="email" value=""/>
-          </div>
-
-          <div class="form-group">
-            <label name="title">Password</label>
-            <input type="text" name="password" value=""/>
-          </div>
-
-          <div class="form-group">
-            <label name="title">Location</label>
-            <input type="text" name="location" value=""/>
-          </div>
-
-          <div class="form-group">
-            <label name="title">Handicap</label>
-            <input type="text" name="handicap" value=""/>
-          </div>
-
-          <button type="submit" class="btn btn-default">Log In</button>
-        </form> 
-        </div>    
-    </div>
-              </div>
-            </div>
-          </div>
-<% } %>
+		<div id="links">
+			<button><a href="/users/<%= curr_user_id %>">My Profile</a></button>
+			<button id="logout"><a href="/logout">Log Out</a></button>
+		</div>
+	<% } else { %>
 
 
 
-<div class="row">
-  <div class="col-xs-6 col-md-3">
+	  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Not Logged in? Click Here to Start</button>
+	    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	            <div class="modal-dialog" role="document">
+	              <div class="modal-content">
+	                <div class="modal-header">
+	                  <button type="button" class="close" data-dismiss="modal">x</button>
+	                </div>
 
-      <img src="<%= course.image_url %>" class="big-image">
-  </div>
+	                <ul class="nav nav-tabs">
+	                  <li role="presentation" class="active"><a href="#login" data-toggle="tab">Login</a></li>
+	                  <li role="presentation"><a href="#register" data-toggle="tab">Register</a></li>
+	                </ul>
+	                <div class="tab-content">
+	      <div class="tab-pane active" id="login">  
+
+	        <h1>Log In</h1>
+
+	        <form id="redirectForm" action="/login_redirect/" method="post">
+	          <div class="form-group">
+	            <label name="title">Email</label>
+	            <input type="email" class="form-control" name="email" value="" placeholder="Email">
+	          </div>
+
+	          <div class="form-group">
+	            <label name="title">Password</label>
+	            <input type="text" class="form-control" name="password" value="" placeholder="Password">
+	          </div>
+
+	          <button type="submit" class="btn btn-default">Log In</button>
+	        </form>   
+	      </div>
+	  
+
+
+	      <div class="tab-pane" id="register">  
+
+	        <h1>New User</h1>
+
+	        <form action="/users/create" method="post">
+	          <div class="form-group">
+	                <label name="title">Name</label>
+	                <input type="text" name="name" value=""/>
+	          </div>
+
+	          <div class="form-group">
+	            <label name="title">Email</label>
+	            <input type="text" name="email" value=""/>
+	          </div>
+
+	          <div class="form-group">
+	            <label name="title">Password</label>
+	            <input type="text" name="password" value=""/>
+	          </div>
+
+	          <div class="form-group">
+	            <label name="title">Location</label>
+	            <input type="text" name="location" value=""/>
+	          </div>
+
+	          <div class="form-group">
+	            <label name="title">Handicap</label>
+	            <input type="text" name="handicap" value=""/>
+	          </div>
+
+	          <button type="submit" class="btn btn-default">Log In</button>
+	        </form> 
+	        </div>    
+	    </div>
+	              </div>
+	            </div>
+	          </div>
+	<% } %>
 
 
 
-<!-- <h1><%= course.name %></h1>
-<img src="<%= course.rating_img_url_large %>" alt="...">
-<p>Address:<%= course.location.display_address %></p>
+	<div class="row">
+	  <div class="col-xs-6 col-md-3">
 
-<p>Phone Number:<%= course.display_phone %></p>
-<p><%= course.url %></p>
-<p><%= course.snippet_text %></p> -->
+	      <img src="<%= course.image_url %>" class="big-image">
+	  </div>
 
 
 
-
-<div id="courseInfo">
-	<h1><%= course.name %></h1>
+	<!-- <h1><%= course.name %></h1>
 	<img src="<%= course.rating_img_url_large %>" alt="...">
 	<p>Address:<%= course.location.display_address %></p>
+
 	<p>Phone Number:<%= course.display_phone %></p>
 	<p><%= course.url %></p>
-	<p><%= course.snippet_text %></p>
-  </div>
+	<p><%= course.snippet_text %></p> -->
 
-</div>
 
+
+
+	<div id="courseInfo">
+		<h1 id="courseName"><%= course.name %></h1>
+		<img src="<%= course.rating_img_url_large %>" alt="...">
+		<div id="specs">
+			<p>18 Holes</p>
+			<p>Par 72</p>
+			<p>5478 Yards</p>
+		</div>
+
+		<div id="text">
+			<p><%= course.snippet_text %></p>
+		</div>
+		<div id="contactInfo">
+			<p>Address: <%= course.location.display_address %></p>
+			<p>Phone Number: <%= course.display_phone %></p>
+			<p><%= course.url %></p>
+		</div>
+	  </div>
+
+	</div>
 
 	<!-- display different groups here -->
 	<div id="groups">
 		<% include ../partials/groups.ejs %>
 	</div>
+</div>
 
 
 
