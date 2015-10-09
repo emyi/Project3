@@ -13,11 +13,9 @@
 		<% if( curr_user ){ %>
 
 		<p>logged in user: <%= curr_user.name %></p>
-		<a href="/logout">Log Out</a>
-		<br/>
-		<a href="/users/<%= curr_user._id%>/edit">Edit</a>
-
-	<% include ../partials/edit %>
+		<button style="background-color: #FF6B00"><a href="/logout" style="color:white">Log Out</a></button>
+		
+		<button style="background-color: #FF6B00"><a href="/users/<%= curr_user._id%>/edit" style="color:white">Edit</a></button>
 
 		<% } else { %>
 
