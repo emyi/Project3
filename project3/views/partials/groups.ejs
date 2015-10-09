@@ -2,21 +2,30 @@
 	<table>
 		<tbody>
 		<% for(var i=0; i < game.length; i++) { %>
+
 		<tr>
-		    <td>Group<%= i+1 %>&nbsp;</td>
+			<td>Time</td>
+			<td>Player 1</td>
+			<td>Player 2</td>
+			<td>Player 3</td>
+			<td>Player 4</td>
+		</tr>	
 
-
-		<!-- 	    <td><%= game[i].user_ids %></td> -->
+		<tr>
+		    <td><%= i+1 %>:00 pm&nbsp;</td>
 
 			    <% for (var j = 0; j < game[i].user_ids.length; j ++) { %>
 			    	<td><%= game[i].user_ids[j].name %>  </td>
 			    <% } %>
-		    <td><%= game[i].teetime %></td>
-
-				<td><a href="/group/add/<%= game[i].id %>" id="add">Add</a></td>
+		    
+		    <td></td>
+		    <td></td>
+		    <td></td>
+			<td><a href="/group/add/<%= game[i].id %>" id="add">Add</a></td>
 
 		</tr>
 		<% } %>
+		
 		</tbody>
 	</table>
 <% } %>

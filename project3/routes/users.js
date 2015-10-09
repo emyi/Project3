@@ -1,6 +1,7 @@
 var express = require('express');
 var usersController = express.Router();
 var User = require('../models/user.js');
+var Game = require('../models/game.js');
 
 
 // usersController.get('/user', function ( req, res ) {
