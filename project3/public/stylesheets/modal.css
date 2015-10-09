@@ -56,7 +56,7 @@
 background-color: rgba(255, 255, 255, 0.3);
 }
 .navbar-default .navbar-brand {
-  color: #0b2931;
+  color: #FF6B00;
 }
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
   color: #5d269c;
@@ -189,8 +189,10 @@ margin: 50px auto;
 	transition: all .2s ease;
 }
 .navbar-header img {
-	height: 100px;
+	height: 130px;
 }
+
+
 
 /*.column img {
 	width: 100%;
@@ -199,12 +201,24 @@ margin: 50px auto;
 
 #search-container {
 	text-align: center;
+	margin: 180px;
 }
 
 .location-bar {
 	position: relative;
 	margin: 0 auto;
 	width: 50%;
+}
+.navbar-brand {
+	font-size: 80px;
+}
+
+.right {
+	float: right;
+	padding: 5px;
+}
+.black {
+	color: black;
 }
 
 
