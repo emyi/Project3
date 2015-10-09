@@ -15,8 +15,15 @@
 
 #links {
 	margin-left: 25px;
+	font-size: 20px;
 }
 
 #currUser {
+	margin-right: 25px;
+	font-size: 15px;
+	text-align: right;
+}
+
+button {
 	margin-left: 25px;
 }
