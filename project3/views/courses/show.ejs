@@ -2,6 +2,7 @@
 <head>
   <title>Course</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../public/stylesheets/course_show.css">
 </head>
 <body>
 
@@ -92,6 +93,8 @@
           </div>
 <% } %>
 
+	<div>
+
 
 <h1><%= course.name %></h1>
 <img src="<%= course.rating_img_url_large %>" alt="...">
@@ -102,8 +105,26 @@
 <p><%= course.snippet_text %></p>
 
 
+	</div>
+
+	<div id="courseInfo">
+		<h1 id="courseName"><%= course.name %></h1>
+		<p>Address:<%= course.location.display_address %></p>
+		<p>Phone Number:<%= course.display_phone %></p>
+		<p>URL:<%= course.url %></p>
+		<img src="<%= course.rating_img_url_large %>" alt="...">
+	</div>
+
+
+	<!-- display different groups here -->
+	<div id="groups">
+		<h1>Groups</h1>
+		<% include ../partials/groups.ejs %>
+	</div>
+
 
 <% include ../partials/groups.ejs %>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 

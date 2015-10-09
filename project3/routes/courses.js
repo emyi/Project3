@@ -45,8 +45,12 @@ coursesController.get('/courses/:id', function(req, res){
   yelp.business(req.params.id, function(error, data){
       if(req.session && req.session.email){
         User.findOne({ email: req.session.email}).then(function(user, err){
-          Game.findAsync({course_id: req.params.id}).then(function(games, err){
-            console.log(games);
+          Game.find({course_id: req.params.id}).populate("user_ids").execAsync().then(function(games, err){
+            console.log("games object /courses/:id : " + games);
+
+            //find all users that match array of id's in game, 
+            //use the mongo db $in operator to query all matching user documents
+            //User.find()
             res.render('courses/show.ejs', {
               course_id: req.params.id,
               course: data,
@@ -57,7 +61,8 @@ coursesController.get('/courses/:id', function(req, res){
           });
         });
       }else{
-        Game.findAsync({course_id: req.params.id}).then(function(games, err){
+         console.log("hitting else statement");
+        Game.find({course_id: req.params.id}).populate("user_ids").execAsync().then(function(games, err){
             console.log(games);
             res.render('courses/show.ejs', {
               course_id: req.params.id,
