@@ -1,53 +1,33 @@
 <% if( game && game.length > 0) { %>
-	<table>
-		<tbody>
-			<tr>
-				<td>Time</td>
-				<td>Player 1</td>
-				<td>Player 2</td>
-				<td>Player 3</td>
-				<td>Player 4</td>
-			</tr>
-		<% for(var i=0; i < game.length; i++) { %>	
+    <table>
+        <tbody>
+            <h1>Groups</h1>
+            <tr>
+                <td>Time</td>
+                <td>Player 1</td>
+                <td>Player 2</td>
+                <td>Player 3</td>
+                <td>Player 4</td>
+            </tr>
+        <% for(var i=0; i < game.length; i++) { %>  
 
-		<tr>
-		    <td><%= i+1 %>:00 pm&nbsp;</td>
+        <tr>
+            <td><%= i+1 %>:00 pm&nbsp;</td>
 
-			    <% for (var j = 0; j < game[i].user_ids.length; j ++) { %>
-			    	<td id="userName"><%= game[i].user_ids[j].name %></td>
-			    <% } %>
-		    
-		    <td></td>
-		    <td></td>
-		    <td></td>
-			<td><a href="/group/add/<%= game[i].id %>" id="add">Add</a></td>
+                <% for (var j = 0; j < game[i].user_ids.length; j ++) { %>
+                    <td id="userName"><%= game[i].user_ids[j].name %></td>
+                <% } %>
+            
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><a href="/group/add/<%= game[i].id %>" id="add">Add</a></td>
+
 
 		</tr>
 		<% } %>
 		
 		</tbody>
 	</table>
-
-	<% for (var i = 0; i < game.length; i ++) { %> 
-		<div class="panel panel-default col-md-3">
-				<div class="panel-body"><h3>Group <%= i+1 %> &nbsp;</h3>
-					<div class="row">
-						<% for (var j = 0; j < 2; j ++) { %> 
-
-							<%= game[i].user_ids[j].name %>
-							
-						<% } %>
-					</div>
-					<div class="row">
-						<% for (var j = 2; j < game[i].user_ids.length; j ++) { %> 
-						
-							<%= game[i].user_ids[j].name %>
-					
-						<% } %>
-					</div>
-				</div>
-
-		</div>
-	<% } %>
-
 <% } %>
+
