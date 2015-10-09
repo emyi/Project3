@@ -93,15 +93,24 @@
 <% } %>
 
 
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail" style="height:300px">
+      <img src="..." alt="...">
+    </a>
+  </div>
+
+
+
 <h1><%= course.name %></h1>
 <img src="<%= course.rating_img_url_large %>" alt="...">
 <p>Address:<%= course.location.display_address %></p>
 
 <p>Phone Number:<%= course.display_phone %></p>
-<p>URL:<%= course.url %></p>
+<p><%= course.url %></p>
 <p><%= course.snippet_text %></p>
 
-
+</div>
 
 <% include ../partials/groups.ejs %>
 
