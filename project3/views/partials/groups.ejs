@@ -5,14 +5,14 @@
 		<tr>
 		    <td>Group<%= i+1 %>&nbsp;</td>
 
-		    		<td><%= game[i].user_ids %></td> 
-			<td><a href="/group/add/<%= game[i].id %>" id="add">Add</a></td>
+		<!-- 	    <td><%= game[i].user_ids %></td> -->
 
 
 			    <% for (var j = 0; j < game[i].user_ids.length; j ++) { %>
-			    	<td><%= game[i].user_ids[j].name %></td>
+			    	<td><%= game[i].user_ids[j].name %>  </td>
 			    <% } %>
 		    <td><%= game[i].teetime %></td>
+				<td><a href="/group/add/<%= game[i].id %>" id="add">Add</a></td>
 
 		</tr>
 		<% } %>

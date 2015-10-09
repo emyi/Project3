@@ -59,7 +59,6 @@ gamesController.get('/group/add/:gameid', function(req, res) {
 			console.log("user id: " + user.id);
 			game.user_ids.push(user.id);
 			game.saveAsync().then(function(game) {
-					
 			});
 		}).catch(function(err) {console.log(err)});
 	});
