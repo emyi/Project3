@@ -52,16 +52,11 @@ app.use(require('./routes'));
 //   });
 // }
 
-switch(app.get('env')){
-    case 'development':
-        mongoose.connect(dbConfig.mongo.dev.conn, dbConfig.mongo.options);
-        break;
-    case 'production':
-        mongoose.connect(dbConfig.mongo.prod.conn, dbConfig.mongo.options);
-        break;
-    default:
-        throw new Error('Unknown execution environment: ' + app.get('env'));
-}
+mongoose.connect(
+  process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  'mongodb://localhost/YOUR_LOCAL_DATABASE_NAME' // plug in the db name you've been using
+);
 
 require('./db/seeds.js').seedUsers();
 
